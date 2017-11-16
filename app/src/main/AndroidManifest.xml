@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dengzh.sample">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- &lt;!&ndash; 用于评论模块分享位置信息 &ndash;&gt; -->
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!--Android 6.0 申请权限也需要在此先声明权限-->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <!-- 启用错误分析功能，须添加该权限 -->
+    <!-- <uses-permission android:name="android.permission.READ_LOGS" /> -->
+    <!-- 添加操作联系人的权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+    <!--友盟权限-->
+    <uses-sdk android:minSdkVersion="8"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <!-- 必须的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 推荐的权限 -->
+    <!-- 添加如下权限，以便使用更多的第三方SDK(如：高德定位SDK)和更精准的统计数据 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <!--友盟权限结束-->
+
+
+
+    <!--硬件加速  关闭 android:hardwareAccelerated="false" -->
+    <application
+        android:name="com.dengzh.sample.module.base.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:hardwareAccelerated="false"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.dengzh.sample.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".module.retrofit.RegisterActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.dengzh.sample.module.retrofit.GitHubActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.dengzh.sample.module.premission.CallActivity">
+        </activity>
+        <activity android:name="com.dengzh.sample.module.retrofit.RxMsg2Activity" />
+        <activity android:name="com.dengzh.sample.module.retrofit.RxMsg1Activity">
+        </activity>
+        <activity android:name=".module.customView.PieChartActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".module.customView.LeafLoadingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".module.customView.EditTextActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".module.customView.RadarActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".module.customView.BezierActivity"/>
+        <activity android:name=".module.customView.MeasurePathActivity" />
+        <activity android:name=".module.umeng.UmengActivity" />
+
+        <!--友盟-->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="59fab2cbf43e480309000222" />
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="fb8155f539a29002aabdfdecb482a352" />
+        <!--友盟-->
+
+        <!--友盟分享-->
+        <!-- QQ -->
+        <activity
+            android:name="com.umeng.qq.tencent.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1106391087" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.umeng.qq.tencent.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--微信-->
+        <activity
+            android:name="com.dengzh.core.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".module.customView.CustomViewActivity" />
+        <activity android:name=".module.dialog.DialogAndPopActivity" />
+        <activity android:name=".module.retrofit.RxAndMvpActivity" />
+        <activity android:name=".module.sqlite.SqliteTestActivity" />
+        <activity android:name=".module.sqlite.RelamActivity" />
+        <activity android:name=".module.sqlite.GreenDaoActivity" />
+
+
+    </application>
+
+</manifest>

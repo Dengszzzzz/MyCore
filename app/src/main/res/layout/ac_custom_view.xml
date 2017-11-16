@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/clickBt1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="饼状图"/>
+
+    <Button
+        android:id="@+id/clickBt2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="树叶进度条"/>
+
+    <Button
+        android:id="@+id/clickBt3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="编辑框"/>
+
+    <Button
+        android:id="@+id/clickBt4"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="雷达图"/>
+
+    <Button
+        android:id="@+id/clickBt5"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="贝塞尔曲线"/>
+
+    <Button
+        android:id="@+id/clickBt6"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="MeasurePath学习"/>
+
+</LinearLayout>

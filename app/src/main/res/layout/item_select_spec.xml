@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15dp"
+    android:layout_marginRight="15dp"
+    >
+
+    <CheckBox
+        android:id="@+id/sizeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_black"
+        android:textSize="13sp"
+        android:text="罐*(50g)"
+        android:background="@drawable/selector_goods_spec"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp"
+        android:button="@null"
+        />
+
+
+
+</LinearLayout>

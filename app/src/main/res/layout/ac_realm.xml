@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Realm数据库使用详解"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/addBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="增"/>
+
+        <Button
+            android:id="@+id/delBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="删"/>
+
+        <Button
+            android:id="@+id/updateBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="改"/>
+
+        <Button
+            android:id="@+id/findBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/contentTv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:text="展示的内容"/>
+
+
+
+</LinearLayout>

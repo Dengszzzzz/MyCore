@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">shop</string>
+    <string name="str_home">首页</string>
+    <string name="str_classify">分类</string>
+    <string name="str_shopping_cart">购物车</string>
+    <string name="str_me">我的</string>
+</resources>

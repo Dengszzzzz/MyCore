@@ -1,0 +1,299 @@
+-- Merging decision tree log ---
+manifest
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:2:1-161:12
+INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:2:1-161:12
+INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:2:1-161:12
+INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:2:1-161:12
+INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:2:1-161:12
+INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:2:1-161:12
+INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:2:1-161:12
+	package
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:3:5-36
+		INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml
+		INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml
+	android:versionName
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:5:5-30
+		INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml
+		INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml
+	xmlns:android
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:4:5-28
+		INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml
+		INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:8:5-67
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:8:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:9:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:10:5-76
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:10:22-73
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:11:5-81
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:11:22-78
+uses-permission#android.permission.WAKE_LOCK
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:12:5-68
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:12:22-65
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:13:5-75
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:13:22-72
+uses-permission#android.permission.BROADCAST_PACKAGE_ADDED
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:14:5-82
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:14:22-79
+uses-permission#android.permission.BROADCAST_PACKAGE_CHANGED
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:15:5-84
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:15:22-81
+uses-permission#android.permission.BROADCAST_PACKAGE_INSTALL
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:16:5-84
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:16:22-81
+uses-permission#android.permission.BROADCAST_PACKAGE_REPLACED
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:17:5-85
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:17:22-82
+uses-permission#android.permission.RESTART_PACKAGES
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:18:5-75
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:18:22-72
+uses-permission#android.permission.GET_TASKS
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:19:5-68
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:19:22-65
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:20:5-81
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:20:22-78
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:21:5-79
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:21:22-76
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:22:5-76
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:22:22-73
+application
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:24:5-159:19
+service#com.taobao.accs.ChannelService
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:26:9-36:19
+	android:process
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:29:13-39
+	android:exported
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:28:13-36
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:27:13-58
+intent-filter#com.taobao.accs.intent.action.SERVICE
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:30:13-32:29
+action#com.taobao.accs.intent.action.SERVICE
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:31:17-80
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:31:25-77
+intent-filter#com.taobao.accs.intent.action.ELECTION
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:33:13-35:29
+action#com.taobao.accs.intent.action.ELECTION
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:34:17-81
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:34:25-78
+service#com.taobao.accs.data.MsgDistributeService
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:38:9-44:19
+	android:exported
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:40:13-36
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:39:13-69
+intent-filter#com.taobao.accs.intent.action.RECEIVE
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:41:13-43:29
+action#com.taobao.accs.intent.action.RECEIVE
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:42:17-80
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:42:25-77
+receiver#com.taobao.accs.EventReceiver
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:46:9-62:20
+	android:process
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:48:13-39
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:47:13-57
+intent-filter#android.intent.action.BOOT_COMPLETED
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:49:13-51:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:50:17-79
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:50:25-76
+intent-filter#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:52:13-54:29
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:53:17-79
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:53:25-76
+intent-filter#android.intent.action.PACKAGE_REMOVED
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:55:13-58:29
+action#android.intent.action.PACKAGE_REMOVED
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:56:17-80
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:56:25-77
+data
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:57:17-50
+	android:scheme
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:57:23-47
+intent-filter#android.intent.action.USER_PRESENT
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:59:13-61:29
+action#android.intent.action.USER_PRESENT
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:60:17-77
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:60:25-74
+receiver#com.taobao.accs.ServiceReceiver
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:64:9-73:20
+	android:process
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:66:13-39
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:65:13-59
+intent-filter#com.taobao.accs.intent.action.COMMAND
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:67:13-69:29
+action#com.taobao.accs.intent.action.COMMAND
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:68:17-80
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:68:25-77
+intent-filter#com.taobao.accs.intent.action.START_FROM_AGOO
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:70:13-72:29
+action#com.taobao.accs.intent.action.START_FROM_AGOO
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:71:17-88
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:71:25-85
+service#com.taobao.accs.ChannelService$KernelService
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:75:9-77:42
+	android:process
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:77:13-39
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:76:13-72
+service#org.android.agoo.accs.AgooService
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:79:9-85:19
+	android:exported
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:81:13-36
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:80:13-61
+service#com.umeng.message.UmengIntentService
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:87:9-94:19
+	android:process
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:90:13-39
+	android:exported
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:89:13-36
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:88:13-64
+intent-filter#org.agoo.android.intent.action.RECEIVE
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:91:13-93:29
+action#org.agoo.android.intent.action.RECEIVE
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:92:17-81
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:92:25-78
+service#com.umeng.message.XiaomiIntentService
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:96:9-103:19
+	android:process
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:99:13-39
+	android:exported
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:98:13-36
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:97:13-65
+receiver#com.taobao.agoo.AgooCommondReceiver
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:105:9-116:20
+	android:process
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:108:13-39
+	android:exported
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:107:13-36
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:106:13-63
+intent-filter#${applicationId}.intent.action.COMMAND
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:109:13-111:29
+action#${applicationId}.intent.action.COMMAND
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:110:17-81
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:110:25-78
+service#com.umeng.message.UmengMessageIntentReceiverService
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:118:9-125:19
+	android:process
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:121:13-39
+	android:exported
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:120:13-36
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:119:13-79
+intent-filter#org.android.agoo.client.MessageReceiverService
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:122:13-124:29
+action#org.android.agoo.client.MessageReceiverService
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:123:17-89
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:123:25-86
+receiver#com.umeng.message.NotificationProxyBroadcastReceiver
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:127:9-129:40
+	android:exported
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:129:13-37
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:128:13-80
+service#com.umeng.message.UmengMessageCallbackHandlerService
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:131:9-146:19
+	android:exported
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:133:13-37
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:132:13-80
+intent-filter#com.umeng.messge.registercallback.action
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:134:13-136:29
+action#com.umeng.messge.registercallback.action
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:135:17-83
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:135:25-80
+intent-filter#com.umeng.message.enablecallback.action
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:137:13-139:29
+action#com.umeng.message.enablecallback.action
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:138:17-82
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:138:25-79
+intent-filter#com.umeng.message.disablecallback.action
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:140:13-142:29
+action#com.umeng.message.disablecallback.action
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:141:17-83
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:141:25-80
+intent-filter#com.umeng.message.message.handler.action
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:143:13-145:29
+action#com.umeng.message.message.handler.action
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:144:17-83
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:144:25-80
+service#com.umeng.message.UmengDownloadResourceService
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:148:9-150:40
+	android:exported
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:150:13-37
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:149:13-74
+provider#com.umeng.message.provider.MessageProvider
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:152:9-157:20
+	android:authorities
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:154:13-65
+	android:exported
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:155:13-37
+	android:name
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:153:13-70
+grant-uri-permission
+ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:156:13-62
+	android:pathPattern
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml:156:35-59
+uses-sdk
+INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml
+INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml
+INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml
+INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml
+		INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml
+		ADDED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml
+		INJECTED from F:\Android\AndroidStudioProjects\Mine\Core\Core\PushSDK\AndroidManifest.xml

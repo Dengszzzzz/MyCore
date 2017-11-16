@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <!--二阶赛贝尔曲线-->
+    <com.dengzh.sample.view.study.BezierView
+        android:id="@+id/bezierView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="gone" />
+
+    <!--三阶赛贝尔曲线-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.dengzh.sample.view.study.Bezier3View
+            android:id="@+id/bezier3View"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/controlBt1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="控制点1" />
+
+            <Button
+                android:id="@+id/controlBt2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:text="控制点2" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--贝塞尔曲线 圆->爱心 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.dengzh.sample.view.study.BezierLoveView
+            android:id="@+id/bezierLoveView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="20dp">
+
+        <com.dengzh.sample.view.study.BezierMagicCircleView
+            android:id="@+id/bezierMagicCicleView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <Button
+            android:id="@+id/startAnimBt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:text="开启动画" />
+
+    </LinearLayout>
+
+</LinearLayout>

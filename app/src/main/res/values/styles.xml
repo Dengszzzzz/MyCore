@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="listDivider">
+        <item name="android:listDivider">@drawable/shape_home_grid_bg</item>
+    </style>
+
+    <!--透明对话框 -->
+    <style name="transparentFrameWindowStyle" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+    <!--对话框动画-->
+    <style name="main_menu_animstyle">
+        <item name="android:windowEnterAnimation">@anim/dialog_in_from_bottom_anim</item>
+        <item name="android:windowExitAnimation">@anim/dialog_out_from_bottom_anim</item>
+    </style>
+
+    <!--popwindow 动画-->
+    <style name="popwindow_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popup_show</item>
+        <!-- 指定显示时的动画xml -->
+        <item name="android:windowExitAnimation">@anim/popup_gone</item>
+        <!-- 指定消失时的动画xml -->
+    </style>
+
+</resources>
