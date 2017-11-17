@@ -14,6 +14,7 @@ import io.reactivex.subjects.Subject;
 
 /**
  * Created by dengzh on 2017/9/21 0021.
+ * 封装rxBus 使用类似EventBus
  */
 
 public class RxBus {

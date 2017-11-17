@@ -1,49 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/clickBt1"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="测试"/>
-
-    <Button
-        android:id="@+id/clickBt2"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="依赖包商城"/>
-
-    <Button
-        android:id="@+id/clickBt3"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="友盟测试"/>
-
-    <Button
-        android:id="@+id/clickBt4"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="自定义view"/>
-
-    <Button
-        android:id="@+id/clickBt5"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Dialog 和  PopWindow"/>
-
-    <Button
-        android:id="@+id/clickBt6"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="rxjava ,retrofit 和 mvp"/>
-
-    <Button
-        android:id="@+id/clickBt7"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Realm和GreenDao"/>
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

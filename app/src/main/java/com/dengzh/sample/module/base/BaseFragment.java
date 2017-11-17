@@ -15,6 +15,7 @@ import com.dengzh.sample.utils.TUtil;
 import com.trello.rxlifecycle2.components.support.RxFragment;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by dengzh on 2017/9/8 0008.
@@ -26,6 +27,7 @@ public abstract class BaseFragment <T extends BasePresenter, E extends IBaseMode
     public E mModel;
 
     protected Activity mActivity;
+    Unbinder unbinder;
 
     @Override
     public void onAttach(Context context) {
@@ -44,7 +46,8 @@ public abstract class BaseFragment <T extends BasePresenter, E extends IBaseMode
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(getLayoutId(), container,false);
-        ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
+        //绑定MVP
         mPresenter= TUtil.getT(this,0);
         mModel= TUtil.getT(this,1);
         if(this instanceof IBaseView){
@@ -64,6 +67,12 @@ public abstract class BaseFragment <T extends BasePresenter, E extends IBaseMode
     protected abstract int getLayoutId();
     protected abstract void initUI();
     protected abstract void initData();
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
 
     @Override
     public void onDestroy() {

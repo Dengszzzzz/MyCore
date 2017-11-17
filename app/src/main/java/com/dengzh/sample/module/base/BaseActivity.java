@@ -5,6 +5,10 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.dengzh.core.base.AppManager;
@@ -14,6 +18,7 @@ import com.dengzh.core.mvp.IBaseView;
 import com.dengzh.core.rx.RxBus;
 import com.dengzh.core.rx.RxEvents;
 import com.dengzh.core.utils.LogUtil;
+import com.dengzh.sample.R;
 import com.dengzh.sample.utils.TUtil;
 import com.dengzh.sample.utils.ToastUtil;
 import com.trello.rxlifecycle2.LifecycleTransformer;
@@ -39,7 +44,8 @@ import io.reactivex.subjects.PublishSubject;
 public abstract class BaseActivity<T extends BasePresenter, M extends IBaseModel> extends RxFragmentActivity {
 
     protected String TAG;
-    LinearLayout mainView;
+    FrameLayout mainView;
+    protected Toolbar toolbar;
 
     protected T mPresenter;
     private M mModel;
@@ -47,9 +53,11 @@ public abstract class BaseActivity<T extends BasePresenter, M extends IBaseModel
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.ac_toolbar_base);
+
         //设置只能竖屏
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        //所有activity都加入
+        //加入activity管理器
         AppManager.getAppManager().addActivity(this);
         //打印activity信息
         printRunningActivity(this, true);
@@ -60,8 +68,7 @@ public abstract class BaseActivity<T extends BasePresenter, M extends IBaseModel
             mPresenter.attachVM((IBaseView) this, mModel);
         }
 
-        setContentView(getLayoutId());
-        ButterKnife.bind(this);
+        initBaseUI();
         initUI(savedInstanceState);
         initData();
 
@@ -69,12 +76,9 @@ public abstract class BaseActivity<T extends BasePresenter, M extends IBaseModel
         PushAgent.getInstance(this).onAppStart();
     }
 
-
-
-   /* private void initBaseUi() {
-        //1.此处可做共有的titlebar处理
-        mainView = (LinearLayout) findViewById(R.id.mainView);
-        //2.绑定contentView
+    private void initBaseUI(){
+        //1.绑定contentView
+        mainView = (FrameLayout) findViewById(R.id.mainView);
         View view = LayoutInflater.from(this).inflate(getLayoutId(), null, false);
         if (view != null) {
             view.setLayoutParams(new LinearLayout.LayoutParams(
@@ -82,13 +86,15 @@ public abstract class BaseActivity<T extends BasePresenter, M extends IBaseModel
             mainView.addView(view);
         }
         ButterKnife.bind(this, mainView);
-    }*/
-
-   /* private void initStatusBar() {
-        //设置状态栏透明
-        StatusBarUtil.setTransparent(this);
+        //2.标题toolBar
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
-*/
 
     /**
      * 打印activity信息
@@ -154,5 +160,11 @@ public abstract class BaseActivity<T extends BasePresenter, M extends IBaseModel
         });
         RxBus.getIntanceBus().addSubscription(this,disposable);
     }
+
+    /********************************** IBaseView通用接口实现 *********************************/
+    public void showLoading(){}
+    public void stopLoading(){}
+
+
 
 }

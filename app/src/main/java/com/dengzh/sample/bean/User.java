@@ -2,6 +2,7 @@ package com.dengzh.sample.bean;
 
 /**
  * Created by dengzh on 2017/9/8 0008.
+ * 网络请求测试类
  */
 
 public class User {

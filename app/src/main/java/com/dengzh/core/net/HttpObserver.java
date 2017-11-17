@@ -88,6 +88,10 @@ public abstract class HttpObserver<T> implements Observer<T> {
     public void onComplete() {}
 
 
+    /*********************************** 调用以下方法即可满足条件 ***********************************/
+    protected void onRequestStart() {}
+    protected void onRequestEnd() {}
+
     /**
      * 返回成功
      *
@@ -107,20 +111,7 @@ public abstract class HttpObserver<T> implements Observer<T> {
     protected abstract void onFailure(Throwable e, boolean isNetWorkError) throws Exception;
 
 
-    protected void onRequestStart() {
-        showProgressDialog();
-    }
 
-    protected void onRequestEnd() {
-        closeProgressDialog();
-    }
 
-    public void showProgressDialog() {
-        //ProgressDialog.show(mContext, false, "请稍后");
-    }
-
-    public void closeProgressDialog() {
-       // ProgressDialog.cancle();
-    }
 
 }

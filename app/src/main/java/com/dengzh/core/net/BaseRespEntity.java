@@ -3,6 +3,7 @@ package com.dengzh.core.net;
 /**
  * Created by dengzh on 2017/9/10 0010.
  * 网络接收实体基类
+ * 一般返回格式都是 {"code":"001","msg":"success","data":{T}}
  */
 
 public class BaseRespEntity<T> {

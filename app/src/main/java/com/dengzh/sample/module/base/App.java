@@ -8,7 +8,9 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManager;
 
+import com.dengzh.core.net.BaseHttpConfig;
 import com.dengzh.sample.R;
+import com.dengzh.sample.net.HttpConfig;
 import com.dengzh.sample.utils.APPUtils;
 import com.dengzh.sample.utils.CrashHandler;
 import com.dengzh.core.utils.LogUtil;
@@ -96,9 +98,10 @@ public class App extends Application{
         initUMengConfig();
         //Realm数据库
         initRealmConfig();
-
+        //core网络
+        initBaseHttpConfig();
         //本地打印奔溃信息
-       CrashHandler.getInstance().init(getApplicationContext());
+        CrashHandler.getInstance().init(getApplicationContext());
 
         //屏幕信息
         DisplayMetrics dm = new DisplayMetrics();
@@ -121,7 +124,7 @@ public class App extends Application{
                 break;
         }
 
-
+        //商城模块
         ShopModule.getInstance().init(this,"1",true);
     }
 
@@ -174,6 +177,18 @@ public class App extends Application{
                 .migration(new CustomMigrationUtils())  //更新数据库的类
                 .build();
         Realm.setDefaultConfiguration(config);
+    }
+
+    /**
+     * 初始化core网络配置
+     */
+    private void initBaseHttpConfig(){
+        new BaseHttpConfig.Builder().
+                setBaseUrl(HttpConfig.BASE_URL)
+                .setTimeoutConnection(HttpConfig.TIMEOUT_CONNECTION)
+                .setTimeoutRead(HttpConfig.TIMEOUT_READ)
+                .setCachePath(HttpConfig.cachePath)
+                .build();
     }
 
 }

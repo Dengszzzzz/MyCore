@@ -2,6 +2,7 @@ package com.dengzh.sample.bean;
 
 /**
  * Created by loovee on 2016/12/21.
+ * 商品规格实体类 -> 商品规格弹窗使用
  */
 
 public class GoodsSpecBean {

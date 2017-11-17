@@ -7,6 +7,7 @@ import io.realm.annotations.Required;
 
 /**
  * Created by dengzh on 2017/11/4.
+ * Realm 数据库实体类
  * 注意：
  * 1.如果创建Model并运行过，然后修改了Model。那么就需要升级数据库，否则会抛异常。
  * 2.Realm数据库的主键字段不是自动增长的，并且不支持设置数据的自增。

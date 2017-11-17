@@ -4,13 +4,17 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 
+import com.dengzh.sample.module.base.App;
+
 import java.util.Stack;
 
 /**
  * Created by hpw on 16/10/28.
+ * App Actibity管理类
  */
 
 public class AppManager {
+
     private static Stack<Activity> activityStack;
     private static AppManager instance;
 
@@ -22,7 +26,10 @@ public class AppManager {
      */
     public static AppManager getAppManager() {
         if (instance == null) {
-            instance = new AppManager();
+            synchronized (AppManager.class){
+                if(instance == null)
+                    instance = new AppManager();
+            }
         }
         return instance;
     }

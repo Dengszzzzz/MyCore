@@ -13,6 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by dengzh on 2017/9/10 0010.
+ * Retrofit管理类
  */
 
 public class RetrofitManager {
@@ -43,11 +44,11 @@ public class RetrofitManager {
                 //设置缓存
                 .addNetworkInterceptor(InterceptorUtil.CacheInterceptor())  //缓存拦截器
                 .addInterceptor(InterceptorUtil.CacheInterceptor())
-                .cache(HttpConfig.getCache())
+                .cache(BaseHttpConfig.getInstance().getCache())
                 //time out
-                .connectTimeout(HttpConfig.TIMEOUT_CONNECTION, TimeUnit.SECONDS)
-                .readTimeout(HttpConfig.TIMEOUT_READ, TimeUnit.SECONDS)
-                .writeTimeout(HttpConfig.TIMEOUT_READ, TimeUnit.SECONDS)
+                .connectTimeout(BaseHttpConfig.getInstance().getTimeoutConnection(), TimeUnit.SECONDS)
+                .readTimeout(BaseHttpConfig.getInstance().getTimeoutRead(), TimeUnit.SECONDS)
+                .writeTimeout(BaseHttpConfig.getInstance().getTimeoutRead(), TimeUnit.SECONDS)
                 //失败重连
                 .retryOnConnectionFailure(true)
                 .build();
@@ -56,7 +57,7 @@ public class RetrofitManager {
         mRetrofit = new Retrofit.Builder()
                 .client(okHttpClient)
                 //设置baseUrl,注意，baseUrl必须后缀"/"
-                .baseUrl(HttpConfig.BASE_URL)
+                .baseUrl(BaseHttpConfig.getInstance().getBaseUrl())
                 //addConverterFactory提供Gson支持，可以添加多种序列化Factory，
                 // 但是GsonConverterFactory必须放在最后,否则会抛出异常。
                 .addConverterFactory(GsonConverterFactory.create())
@@ -64,6 +65,12 @@ public class RetrofitManager {
                 .build();
     }
 
+    /**
+     * 考虑到 网络请求可能分多个类写
+     * @param reqServer
+     * @param <T>
+     * @return
+     */
     public <T> T createReq(Class<T> reqServer){
         return mRetrofit.create(reqServer);
     }
