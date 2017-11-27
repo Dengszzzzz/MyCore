@@ -23,7 +23,7 @@ public class CustomViewActivity extends BaseActivity {
 
     @Override
     protected void initUI(Bundle savedInstanceState) {
-
+        toolbar.setTitle("自定义view");
     }
 
     @Override
@@ -31,7 +31,7 @@ public class CustomViewActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.clickBt1, R.id.clickBt2, R.id.clickBt3, R.id.clickBt4, R.id.clickBt5, R.id.clickBt6})
+    @OnClick({R.id.clickBt1, R.id.clickBt2, R.id.clickBt3, R.id.clickBt4, R.id.clickBt5, R.id.clickBt6,R.id.clickBt7})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.clickBt1:
@@ -51,6 +51,9 @@ public class CustomViewActivity extends BaseActivity {
                 break;
             case R.id.clickBt6:
                 startActivity(new Intent(this, MeasurePathActivity.class));
+                break;
+            case R.id.clickBt7:
+                startActivity(LevelViewActivity.class);
                 break;
         }
     }

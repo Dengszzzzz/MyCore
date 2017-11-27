@@ -12,6 +12,7 @@ import butterknife.OnClick;
 
 /**
  * Created by dengzh on 2017/11/4.
+ *
  */
 
 public class RxAndMvpActivity extends BaseActivity {
@@ -23,7 +24,7 @@ public class RxAndMvpActivity extends BaseActivity {
 
     @Override
     protected void initUI(Bundle savedInstanceState) {
-
+        toolbar.setTitle("RxJava和MVP");
     }
 
     @Override

@@ -4,7 +4,9 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.hardware.camera2.params.ColorSpaceTransform;
+import android.os.Build;
 import android.util.SparseArray;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,13 +76,21 @@ public class BasePopupWindow {
     /**
      * 相对于某个控件显示
      * 实际上 在某个view下方弹出
-     *
+     * 系统为7.0时，showAsDropDown()不起效果 需要做如下处理
      * @param anchor
      * @param xoff
      * @param yoff
      */
     public void showAsDropDown(View anchor, int xoff, int yoff) {
-        popupWindow.showAsDropDown(anchor, xoff, yoff);
+        if (Build.VERSION.SDK_INT < 24) {
+            popupWindow.showAsDropDown(anchor, xoff, yoff);
+        }else{
+            // 获取控件的位置，安卓系统>7.0
+            int[] location = new int[2];
+            anchor.getLocationOnScreen(location);
+            popupWindow.showAtLocation(anchor, Gravity.NO_GRAVITY, 0, location[1] + anchor.getHeight());
+        }
+
     }
 
     /**

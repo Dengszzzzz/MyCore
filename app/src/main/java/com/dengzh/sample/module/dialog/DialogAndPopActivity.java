@@ -44,7 +44,7 @@ public class DialogAndPopActivity extends BaseActivity {
 
     @Override
     protected void initUI(Bundle savedInstanceState) {
-
+        toolbar.setTitle("Dialog和PopWindow弹窗");
     }
 
     @Override

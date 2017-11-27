@@ -34,7 +34,7 @@ public class UmengActivity extends BaseActivity {
 
     @Override
     protected void initUI(Bundle savedInstanceState) {
-
+        toolbar.setTitle("友盟");
     }
 
     @Override

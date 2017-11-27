@@ -143,6 +143,7 @@
         <activity android:name=".module.sqlite.SqliteTestActivity" />
         <activity android:name=".module.sqlite.RelamActivity" />
         <activity android:name=".module.sqlite.GreenDaoActivity" />
+        <activity android:name=".module.customView.LevelViewActivity" />
 
 
     </application>

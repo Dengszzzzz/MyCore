@@ -40,4 +40,10 @@
         android:layout_height="40dp"
         android:text="MeasurePath学习"/>
 
+    <Button
+        android:id="@+id/clickBt7"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="晋级图"/>
+
 </LinearLayout>

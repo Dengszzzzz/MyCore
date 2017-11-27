@@ -54,7 +54,7 @@ public class GitHubActivity extends BaseActivity<GithubPresenter,GithubModel> im
 
     @Override
     protected void initUI(Bundle savedInstanceState) {
-
+        toolbar.setTitle("Retrofit网络请求");
     }
 
     @Override

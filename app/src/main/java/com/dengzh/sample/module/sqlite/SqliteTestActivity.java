@@ -22,7 +22,7 @@ public class SqliteTestActivity extends BaseActivity {
 
     @Override
     protected void initUI(Bundle savedInstanceState) {
-
+        toolbar.setTitle("数据库");
     }
 
     @Override
