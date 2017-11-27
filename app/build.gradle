@@ -31,6 +31,7 @@ dependencies {
     //导入自己写的依赖包
     compile project(':shop')
     compile project(':PushSDK')
+    compile project(':levelviewlibray')
 
    //butterknife  此依赖搬到shop module 后，主module使用无效
     compile 'com.jakewharton:butterknife:8.4.0'
