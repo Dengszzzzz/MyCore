@@ -144,6 +144,9 @@
         <activity android:name=".module.sqlite.RelamActivity" />
         <activity android:name=".module.sqlite.GreenDaoActivity" />
         <activity android:name=".module.customView.LevelViewActivity" />
+        <activity android:name=".module.materialDesign.ToolBarTestActivity" />
+        <activity android:name=".module.materialDesign.MaterDesignActivity" />
+        <activity android:name=".module.materialDesign.AppBarLayoutActivity" />
 
 
     </application>

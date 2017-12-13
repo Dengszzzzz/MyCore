@@ -2,13 +2,16 @@
 
     <style name="AppTheme" parent="@style/AppBaseTheme"/>
 
+    <!--使用toolBar 需要使用没有actionBar的样式-->
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!--通知栏等的颜色-->
+        <!--通知栏(状态栏)等的颜色-->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <!--导航栏的颜色-->
+        <!--App bar 的颜色-->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <!--全局 字体颜色-->
+        <!--修改toolbar的Title颜色-->
         <item name="android:textColorPrimary">@color/black</item>
+        <!--修改toolbar的subtitle颜色-->
+        <item name="subtitleTextColor">@color/white</item>
         <!--全局 背景颜色-->
         <item name="android:windowBackground">@color/background</item>
         <!--解决textView全局大小写问题-->
@@ -17,11 +20,24 @@
        <!-- <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>-->
         <!-- toolbar中menu的文字的颜色,并非溢出菜单的内容文字颜色 -->
         <item name="actionMenuTextColor">@color/white</item>
+        <!--.修改Toolbar的menu折叠图标和NavigationIcon的颜色-->
+        <item name="colorControlNormal">@android:color/white</item>
     </style>
 
     <style name="toolBarTextAppearance">
         <item name="android:textSize">18sp</item>
     </style>
+
+    <!-- ToolBar菜单样式.-->
+    <style name="popup_theme" parent="@style/ThemeOverlay.AppCompat.Dark">
+        <!--设置背景-->
+        <item name="android:background">@android:color/white</item>
+        <!--设置字体颜色-->
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+        <!--设置不覆盖锚点-->
+        <item name="overlapAnchor">false</item>
+    </style>
+
 
     <style name="listDivider">
         <item name="android:listDivider">@drawable/shape_home_grid_bg</item>

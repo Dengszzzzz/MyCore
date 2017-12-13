@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--写此处的是 v21以上独有的，共用的在values-->
+    <style name="AppTheme" parent="@style/AppBaseTheme">
+        <!-- 导航栏底色 -->
+        <item name="android:navigationBarColor">@color/colorAccent</item>
+        <item name="android:navigationIcon">?attr/homeAsUpIndicator</item>
+    </style>
+
+</resources>

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +21,6 @@ import com.dengzh.core.rx.RxEvents;
 import com.dengzh.core.utils.LogUtil;
 import com.dengzh.sample.R;
 import com.dengzh.sample.utils.TUtil;
-import com.dengzh.sample.utils.ToastUtil;
-import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.trello.rxlifecycle2.components.support.RxFragmentActivity;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.message.PushAgent;
@@ -30,7 +29,6 @@ import butterknife.ButterKnife;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
-import io.reactivex.subjects.PublishSubject;
 
 /**
  * Created by Administrator on 2017/9/7 0007.
@@ -41,7 +39,7 @@ import io.reactivex.subjects.PublishSubject;
  * 4.打印进入的哪个activity界面
  */
 
-public abstract class BaseActivity<T extends BasePresenter, M extends IBaseModel> extends RxFragmentActivity {
+public abstract class BaseActivity2<T extends BasePresenter, M extends IBaseModel> extends AppCompatActivity {
 
     protected String TAG;
     FrameLayout mainView;

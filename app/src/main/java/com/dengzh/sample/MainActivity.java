@@ -1,14 +1,13 @@
 package com.dengzh.sample;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.dengzh.sample.adapter.ItemAdapter;
+import com.dengzh.sample.module.materialDesign.MaterDesignActivity;
 import com.dengzh.sample.module.base.BaseActivity;
 import com.dengzh.sample.module.customView.CustomViewActivity;
 import com.dengzh.sample.module.dialog.DialogAndPopActivity;
@@ -19,14 +18,10 @@ import com.dengzh.sample.module.umeng.UmengActivity;
 import com.dengzh.sample.utils.ToastUtil;
 import com.dengzh.shop.module.home.HomeActivity;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 
 public class MainActivity extends BaseActivity {
@@ -39,7 +34,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_main;
+        return R.layout.ac_custom_list;
     }
 
     @Override
@@ -58,7 +53,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        String[] strs = {"测试","依赖包商城","友盟测试","自定义view","Dialog和PopWindow","rxjava ,retrofit 和 mvp","Realm和GreenDao"};
+        String[] strs = {"测试","依赖包商城","友盟测试","自定义view","Dialog和PopWindow","rxjava ,retrofit 和 mvp","Realm和GreenDao","5.0以上新控件"};
         List<String> nameList = Arrays.asList(strs);
         adapter = new ItemAdapter(nameList);
         recyclerView.setAdapter(adapter);
@@ -87,6 +82,8 @@ public class MainActivity extends BaseActivity {
                     case 6:
                         startActivity(SqliteTestActivity.class);
                         break;
+                    case 7:
+                        startActivity(MaterDesignActivity.class);
                 }
             }
         });
