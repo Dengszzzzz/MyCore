@@ -28,10 +28,16 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:26.+'
+
     //导入自己写的依赖包
     compile project(':shop')
     compile project(':PushSDK')
     compile project(':levelviewlibray')
+    //二维码
+    compile 'com.google.zxing:core:3.3.0'
+    compile 'cn.bingoogolapple:bga-qrcodecore:1.1.9@aar'
+    compile 'cn.bingoogolapple:bga-zxing:1.1.9@aar'
 
    //butterknife  此依赖搬到shop module 后，主module使用无效
     compile 'com.jakewharton:butterknife:8.4.0'

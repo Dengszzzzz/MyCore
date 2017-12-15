@@ -55,6 +55,10 @@
 
     <!--友盟权限结束-->
 
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 摄像头权限 -->
+    <uses-feature android:name="android.hardware.camera.autofocus" /> <!-- 自动聚焦权限 -->
 
 
     <!--硬件加速  关闭 android:hardwareAccelerated="false" -->
@@ -147,7 +151,14 @@
         <activity android:name=".module.materialDesign.ToolBarTestActivity" />
         <activity android:name=".module.materialDesign.MaterDesignActivity" />
         <activity android:name=".module.materialDesign.AppBarLayoutActivity" />
+        <activity android:name=".module.materialDesign.TabLayouActivity" />
+        <activity android:name=".module.materialDesign.NavigationViewActivity" />
+        <activity android:name=".module.materialDesign.CollapsingToolbarLayoutActivity" />
 
+
+        <activity android:name="com.google.zxing.activity.CaptureActivity"/>
+        <activity android:name=".module.qrCode.QrCodeActivity" />
+        <activity android:name=".module.qrCode.TestScanActivity" />
 
     </application>
 

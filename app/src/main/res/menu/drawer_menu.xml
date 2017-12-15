@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/drawer_home"
+            android:icon="@mipmap/shop_home_normal"
+            android:title="@string/str_home" />
+
+        <item
+            android:id="@+id/drawer_classify"
+            android:icon="@mipmap/shop_classify_normal"
+            android:title="@string/str_classify" />
+
+        <item
+            android:id="@+id/drawer_cart"
+            android:icon="@mipmap/shop_car_normal"
+            android:title="@string/str_shopping_cart" />
+
+        <item
+            android:id="@+id/sub"
+            android:title="subTitle">
+            <menu>
+                <item
+                    android:id="@+id/drawer_me"
+                    android:icon="@mipmap/shop_me_normal"
+                    android:title="@string/str_me" />
+                <item
+                    android:id="@+id/drawer_shop"
+                    android:icon="@mipmap/shop_me_pre"
+                    android:title="@string/str_me" />
+            </menu>
+        </item>
+    </group>
+</menu>

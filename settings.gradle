@@ -1,1 +1,1 @@
-include ':app', ':shop', ':PushSDK'
+include ':app', ':shop', ':PushSDK', ':levelviewlibray'

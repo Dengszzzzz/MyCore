@@ -5,6 +5,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -45,6 +46,8 @@ public class AppBarLayoutActivity extends BaseActivity {
     TextInputLayout userNameTil;
     @BindView(R.id.pwdNameTil)
     TextInputLayout pwdNameTil;
+    @BindView(R.id.tabLayout)
+    TabLayout tabLayout;
 
 
     @Override
@@ -63,9 +66,18 @@ public class AppBarLayoutActivity extends BaseActivity {
             }
         });
 
-        //webView.loadUrl("http://www.jianshu.com/p/d159f0176576");
+     //   webView.setVisibility(View.VISIBLE);
+      //  webView.loadUrl("http://www.jianshu.com/p/d159f0176576");
 
-        //FloatingActionButton 和 Snackbar
+        //testFloatingActionButton();
+        //testTextInputLayout();
+        testTabLayout();
+    }
+
+    /**
+     * FloatingActionButton 和 Snackbar测试
+     */
+    private void testFloatingActionButton() {
         factionBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,11 +94,15 @@ public class AppBarLayoutActivity extends BaseActivity {
                 });
             }
         });
-
-
+        factionBt.setVisibility(View.VISIBLE);
     }
 
-    private void testTextInputLayout(){
+    /**
+     * TextInputLayout 测试
+     */
+    private void testTextInputLayout() {
+        userNameTil.setVisibility(View.VISIBLE);
+        pwdNameTil.setVisibility(View.VISIBLE);
         //1.得到EditText对象
         EditText userEt = userNameTil.getEditText();
         EditText pwdEt = pwdNameTil.getEditText();
@@ -95,12 +111,12 @@ public class AppBarLayoutActivity extends BaseActivity {
         userEt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                LogUtil.d(TAG,"beforeTextChanged执行了....s = " + s + "---start = " + start + "---count = " + count + "---after = " + after);
+                LogUtil.d(TAG, "beforeTextChanged执行了....s = " + s + "---start = " + start + "---count = " + count + "---after = " + after);
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                LogUtil.d(TAG,"onTextChanged执行了....s = " + s + "---start = " + start + "---count = " + count + "---before = " + before);
+                LogUtil.d(TAG, "onTextChanged执行了....s = " + s + "---start = " + start + "---count = " + count + "---before = " + before);
                 if (s.length() > 7) {
                     userNameTil.setErrorEnabled(true);//设置是否打开错误提示
                     userNameTil.setError("用户名长度不能超过8个");//设置错误提示的信息
@@ -136,6 +152,24 @@ public class AppBarLayoutActivity extends BaseActivity {
 
             }
         });
+    }
+
+    /**
+     * TabLayout 测试
+     * 一般 TabLayout+ViewPager
+     */
+    private void testTabLayout() {
+        //添加8个Tab标签，并设置第一个Tab标签为选中状态.
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"),true);
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 4"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 5"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 6"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 7"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 8"));
+        //设置Tab的模式为可滑动，当tab标签超过屏幕宽度时，可以滑动.
+        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
     }
 
     @Override

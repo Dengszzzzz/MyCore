@@ -6,8 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        layout="@layout/toolbar_layout"/>
+
     <!-- app:elevation设置z轴高度(阴影) 5.0及以上支持-->
-    <android.support.design.widget.AppBarLayout
+    <!--<android.support.design.widget.AppBarLayout
         android:id="@+id/base_appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,7 +32,7 @@
 
         </android.support.v7.widget.Toolbar>
 
-    </android.support.design.widget.AppBarLayout>
+    </android.support.design.widget.AppBarLayout>-->
 
     <!--主体内容-->
     <FrameLayout

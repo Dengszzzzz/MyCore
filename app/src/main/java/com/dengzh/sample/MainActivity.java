@@ -11,6 +11,7 @@ import com.dengzh.sample.module.materialDesign.MaterDesignActivity;
 import com.dengzh.sample.module.base.BaseActivity;
 import com.dengzh.sample.module.customView.CustomViewActivity;
 import com.dengzh.sample.module.dialog.DialogAndPopActivity;
+import com.dengzh.sample.module.qrCode.QrCodeActivity;
 import com.dengzh.sample.module.retrofit.GitHubActivity;
 import com.dengzh.sample.module.retrofit.RxAndMvpActivity;
 import com.dengzh.sample.module.sqlite.SqliteTestActivity;
@@ -53,7 +54,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        String[] strs = {"测试","依赖包商城","友盟测试","自定义view","Dialog和PopWindow","rxjava ,retrofit 和 mvp","Realm和GreenDao","5.0以上新控件"};
+        String[] strs = {"测试","依赖包商城","友盟测试","自定义view","Dialog和PopWindow","rxjava ,retrofit 和 mvp","Realm和GreenDao","5.0以上新控件","二维码"};
         List<String> nameList = Arrays.asList(strs);
         adapter = new ItemAdapter(nameList);
         recyclerView.setAdapter(adapter);
@@ -84,6 +85,8 @@ public class MainActivity extends BaseActivity {
                         break;
                     case 7:
                         startActivity(MaterDesignActivity.class);
+                    case 8:
+                        startActivity(QrCodeActivity.class);
                 }
             }
         });
