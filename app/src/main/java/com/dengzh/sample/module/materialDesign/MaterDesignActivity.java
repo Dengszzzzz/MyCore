@@ -48,7 +48,7 @@ public class MaterDesignActivity extends BaseActivity{
 
     @Override
     protected void initData() {
-        String[] strs = {"toolBar","AppBarLayout和CoordinatorLayout","TabLayout","NavigationView","Collapsing"};
+        String[] strs = {"toolBar","AppBarLayout和CoordinatorLayout","TabLayout","NavigationView","Collapsing","Constraint"};
         List<String> nameList = Arrays.asList(strs);
         adapter = new ItemAdapter(nameList);
         recyclerView.setAdapter(adapter);
@@ -70,6 +70,9 @@ public class MaterDesignActivity extends BaseActivity{
                         break;
                     case 4:
                         startActivity(CollapsingToolbarLayoutActivity.class);
+                        break;
+                    case 5:
+                        startActivity(ConstraintActivity.class);
                         break;
                 }
             }

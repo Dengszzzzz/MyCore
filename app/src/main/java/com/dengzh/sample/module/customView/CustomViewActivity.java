@@ -56,7 +56,7 @@ public class CustomViewActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        String[] strs = {"饼状图","树叶进度条","编辑框","雷达图","贝塞尔曲线","MeasurePath学习","晋级图"};
+        String[] strs = {"饼状图","树叶进度条","编辑框","雷达图","贝塞尔曲线","MeasurePath学习","晋级图","轮播图"};
         List<String> nameList = Arrays.asList(strs);
         adapter = new ItemAdapter(nameList);
         recyclerView.setAdapter(adapter);
@@ -84,6 +84,9 @@ public class CustomViewActivity extends BaseActivity {
                         break;
                     case 6:
                         startActivity(LevelViewActivity.class);
+                        break;
+                    case 7:
+                        startActivity(BannerActivity.class);
                         break;
                 }
             }

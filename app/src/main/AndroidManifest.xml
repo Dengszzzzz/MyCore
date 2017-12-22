@@ -60,6 +60,8 @@
     <uses-permission android:name="android.permission.CAMERA" /> <!-- 摄像头权限 -->
     <uses-feature android:name="android.hardware.camera.autofocus" /> <!-- 自动聚焦权限 -->
 
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- 蓝牙 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- 蓝牙 -->
 
     <!--硬件加速  关闭 android:hardwareAccelerated="false" -->
     <application
@@ -160,6 +162,9 @@
         <activity android:name=".module.qrCode.QrCodeActivity" />
         <activity android:name=".module.qrCode.TestScanActivity" />
         <activity android:name=".module.customView.BannerActivity" />
+        <activity android:name=".module.materialDesign.ConstraintActivity" />
+        <activity android:name=".module.bluetooth.BluetoothActivity" />
+        <activity android:name=".module.bluetooth.BluetoothDemoActivity" />
 
     </application>
 
