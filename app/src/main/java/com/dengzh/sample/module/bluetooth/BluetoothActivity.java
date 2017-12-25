@@ -31,6 +31,8 @@ import butterknife.OnClick;
  * 2.重要API
  * BluetoothAdapter :这个类代表蓝牙适配器，并且是所有蓝牙交互的入口点
  * BluetoothDevice  :代表一个蓝牙设备，通它可以通过BluetoothSocket向其他的蓝牙设备发出连接请求；
+ *
+ * 了解部分概念就好，没有硬件支持无法写下去
  */
 
 public class BluetoothActivity extends BaseActivity {
