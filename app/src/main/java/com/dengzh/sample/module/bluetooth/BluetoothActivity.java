@@ -133,6 +133,8 @@ public class BluetoothActivity extends BaseActivity {
      可被检测时间通过intent设置BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION属性，如果不设置默认120秒的可被检测时间；
      可被检测时间下限为0（0意味着始终可以被检测到），上限为3600秒，如果低于0或者高于3600，那么系统默认设置它为120秒；
      如果蓝牙没有打开而直接设置蓝牙的可检测性，那么蓝牙会被自动打开。
+
+
      */
     private void setBlueBoothCanFound(){
         Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);

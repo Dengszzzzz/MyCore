@@ -56,7 +56,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        String[] strs = {"测试","依赖包商城","友盟测试","自定义view","Dialog和PopWindow","rxjava ,retrofit 和 mvp","Realm和GreenDao","5.0以上新控件","二维码","蓝牙开发"};
+        String[] strs = {"测试","依赖包商城","友盟测试","自定义view","Dialog和PopWindow","rxjava ,retrofit 和 mvp","Realm和GreenDao","5.0以上新控件","二维码","蓝牙开发测试"};
         List<String> nameList = Arrays.asList(strs);
         adapter = new ItemAdapter(nameList);
         recyclerView.setAdapter(adapter);

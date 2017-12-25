@@ -17,6 +17,7 @@ import butterknife.BindView;
 
 /**
  * Created by dengzh on 2017/12/22.
+ * 蓝牙开发
  */
 
 public class BluetoothDemoActivity extends BaseActivity{
