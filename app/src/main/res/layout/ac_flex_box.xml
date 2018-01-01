@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+    flexWrap        属性表示换行与否，默认为noWrap
+    flexDirection   表示子元素的排列方向
+    justifyContent  表示控件沿主轴对齐方向，有五种取值，默认情况下大家看到控件是左对齐
+    alignContent 表示控件在副轴上的对齐方向（针对多行元素）
+    showDivider      分割线方向
+    dividerDrawable  分割线
+    -->
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="flex_start">
+
+        <!--
+          app:layout_flexGrow="2"  类似权重weight
+          app:layout_order="2"     优先级，默认1,数值越大越靠后
+          app:layout_flexShrink="2"   表示空间不足时子控件的缩放比例，0表示不缩放
+          -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:background="@color/colorPrimary"
+            app:layout_flexGrow="2"
+            app:layout_order="3" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:background="@color/colorAccent"
+            app:layout_flexGrow="1" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+
+    <!--自封装 试例-->
+    <com.dengzh.sample.view.flexboxlayout.TagFlowLayout
+        android:id="@+id/tagFlowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="flex_start"
+        android:background="@color/white"/>
+
+    <Button
+        android:id="@+id/allSelectBt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="选中items"/>
+
+    <!--原生 试例-->
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flexboxLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:padding="5dp"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="flex_start"
+        app:showDivider="middle"
+        app:dividerDrawable="@drawable/divider_flex"
+        android:background="@color/white"/>
+
+</LinearLayout>

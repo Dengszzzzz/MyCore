@@ -48,7 +48,7 @@ public class MaterDesignActivity extends BaseActivity{
 
     @Override
     protected void initData() {
-        String[] strs = {"toolBar","AppBarLayout和CoordinatorLayout","TabLayout","NavigationView","Collapsing","Constraint"};
+        String[] strs = {"toolBar","AppBarLayout和CoordinatorLayout","TabLayout","NavigationView","Collapsing","Constraint","FlexboxLayout"};
         List<String> nameList = Arrays.asList(strs);
         adapter = new ItemAdapter(nameList);
         recyclerView.setAdapter(adapter);
@@ -73,6 +73,9 @@ public class MaterDesignActivity extends BaseActivity{
                         break;
                     case 5:
                         startActivity(ConstraintActivity.class);
+                        break;
+                    case 6:
+                        startActivity(FlexboxActivity.class);
                         break;
                 }
             }

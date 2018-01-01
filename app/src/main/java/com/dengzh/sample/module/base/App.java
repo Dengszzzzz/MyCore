@@ -8,6 +8,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManager;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.dengzh.core.net.BaseHttpConfig;
 import com.dengzh.sample.R;
 import com.dengzh.sample.net.HttpConfig;
@@ -102,6 +103,8 @@ public class App extends Application{
         initBaseHttpConfig();
         //本地打印奔溃信息
         CrashHandler.getInstance().init(getApplicationContext());
+        //初始化百度地图
+        SDKInitializer.initialize(getApplicationContext());
 
         //屏幕信息
         DisplayMetrics dm = new DisplayMetrics();

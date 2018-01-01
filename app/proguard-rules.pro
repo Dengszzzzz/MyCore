@@ -306,3 +306,8 @@
 #retrofit2
 -dontwarn okio.**
 -dontwarn javax.annotation.**
+
+#百度地图
+-keep class com.baidu.** {*;}
+-keep class vi.com.** {*;}
+-dontwarn com.baidu.**
