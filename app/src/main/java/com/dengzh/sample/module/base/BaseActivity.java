@@ -106,6 +106,7 @@ public abstract class BaseActivity<T extends BasePresenter, M extends IBaseModel
     protected void printRunningActivity(Activity ac, boolean isRunning) {
         String contextString = ac.toString();
         String s = contextString.substring(contextString.lastIndexOf(".") + 1, contextString.indexOf("@"));
+        TAG = s;
         if (isRunning) {
             LogUtil.d("Activity", "app:当前正在加入的界面是:" + s);
         } else {

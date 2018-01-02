@@ -8,6 +8,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManager;
 
+import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
 import com.dengzh.core.net.BaseHttpConfig;
 import com.dengzh.sample.R;
@@ -104,7 +105,7 @@ public class App extends Application{
         //本地打印奔溃信息
         CrashHandler.getInstance().init(getApplicationContext());
         //初始化百度地图
-        SDKInitializer.initialize(getApplicationContext());
+        initBaiduMapConfig();
 
         //屏幕信息
         DisplayMetrics dm = new DisplayMetrics();
@@ -194,4 +195,13 @@ public class App extends Application{
                 .build();
     }
 
+    /**
+     * 初始化百度地图配置
+     */
+    private void initBaiduMapConfig(){
+        SDKInitializer.initialize(this);
+        //自4.3.0起，百度地图SDK所有接口均支持百度坐标和国测局坐标，用此方法设置您使用的坐标类型.
+        //包括BD09LL和GCJ02两种坐标，默认是BD09LL坐标。
+        SDKInitializer.setCoordType(CoordType.BD09LL);
+    }
 }
