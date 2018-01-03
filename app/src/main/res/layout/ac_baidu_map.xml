@@ -25,4 +25,78 @@
         android:background="@mipmap/ic_checked"
         android:layout_centerInParent="true"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:id="@+id/detailAddrLl"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/ic_checked"/>
+
+                <TextView
+                    android:id="@+id/detailAddrTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="科苑幼儿园"
+                    android:textSize="@dimen/text_size15"
+                    android:textColor="@color/text_black"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/right_arraw"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line"
+                android:layout_marginLeft="35dp"/>
+
+            <EditText
+                android:id="@+id/streetEt"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@null"
+                android:gravity="center|left"
+                android:layout_marginLeft="35dp"
+                android:textSize="@dimen/text_size15"
+                android:textColor="@color/text_black"
+                android:text="科技园科华路4号"/>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/green"
+            android:layout_marginTop="10dp"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size15"/>
+
+    </LinearLayout>
+
 </RelativeLayout>

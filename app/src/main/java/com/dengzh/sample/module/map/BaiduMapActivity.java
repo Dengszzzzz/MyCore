@@ -4,13 +4,12 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.location.Geocoder;
 import android.os.Bundle;
-import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.MultiAutoCompleteTextView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.baidu.location.BDAbstractLocationListener;
 import com.baidu.location.BDLocation;
@@ -26,6 +25,7 @@ import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.search.core.PoiInfo;
 import com.baidu.mapapi.search.core.SearchResult;
 import com.baidu.mapapi.search.geocode.GeoCodeResult;
 import com.baidu.mapapi.search.geocode.GeoCoder;
@@ -56,6 +56,11 @@ public class BaiduMapActivity extends BaseActivity implements SensorEventListene
     Button button1;
     @BindView(R.id.locationIv)
     ImageView locationIv;
+    @BindView(R.id.detailAddrTv)
+    TextView detailAddrTv;
+    @BindView(R.id.streetEt)
+    EditText streetEt;
+
     private BaiduMap mBaiduMap;
     //定位相关
     private LocationClient mLocClient;
@@ -121,7 +126,7 @@ public class BaiduMapActivity extends BaseActivity implements SensorEventListene
         mLocClient.start();
     }
 
-    private void initListener(){
+    private void initListener() {
         //地图的滑动监听过程
         mBaiduMap.setOnMapStatusChangeListener(new BaiduMap.OnMapStatusChangeListener() {
 
@@ -161,7 +166,7 @@ public class BaiduMapActivity extends BaseActivity implements SensorEventListene
              */
             @Override
             public void onMapStatusChangeFinish(MapStatus mapStatus) {
-                LogUtil.e(TAG,"target:" + mapStatus.target+"");
+                LogUtil.e(TAG, "target:" + mapStatus.target + "");
                 //地理编码
                 geoCoder.reverseGeoCode(new ReverseGeoCodeOption().location(mapStatus.target));
                 geoCoder.setOnGetGeoCodeResultListener(new OnGetGeoCoderResultListener() {
@@ -176,8 +181,25 @@ public class BaiduMapActivity extends BaseActivity implements SensorEventListene
                             ToastUtil.showToast("抱歉，未找到结果");
                             return;
                         }
-                        String address = reverseGeoCodeResult.getAddress();
-                        LogUtil.e(TAG,"地理编码：" + address);
+                        LogUtil.e(TAG, "地理编码开始---------------------------------");
+                        String address = reverseGeoCodeResult.getAddress();  //简要地址信息  -- 有用
+                        ReverseGeoCodeResult.AddressComponent addressComponent = reverseGeoCodeResult.getAddressDetail();  //层次化地址信息，其实就是简要地址分层 XX省，XX市，XX街道
+                        String bussinessCircle = reverseGeoCodeResult.getBusinessCircle();  //位置所属商圈名称 -- 几乎不用
+                        String description = reverseGeoCodeResult.getSematicDescription();  //描述信息        -- 有用
+                        LogUtil.e(TAG, "简要地址信息：" + address);
+                        LogUtil.e(TAG, "层次化地址信息：" + addressComponent.district + addressComponent.street);
+                        LogUtil.e(TAG, "位置所属商圈名称：" + bussinessCircle);
+                        LogUtil.e(TAG, "描述信息：" + description);
+                        for(PoiInfo poiInfo:reverseGeoCodeResult.getPoiList()){
+                            LogUtil.e(TAG,"位置附近的POI信息：" + poiInfo.address + "-" + poiInfo.city + "-" + poiInfo.name);
+                        }
+                        LogUtil.e(TAG, "地理编码结束---------------------------------");
+
+                        //显示详细地址UI
+                        if(reverseGeoCodeResult.getPoiList().size()>0){
+                            detailAddrTv.setText(reverseGeoCodeResult.getPoiList().get(0).name);
+                            streetEt.setText(addressComponent.district + addressComponent.street);
+                        }
                     }
                 });
 
@@ -208,34 +230,40 @@ public class BaiduMapActivity extends BaseActivity implements SensorEventListene
 
     /************************** 传感器 结束******************************/
 
-    @OnClick(R.id.button1)
-    public void onViewClicked() {
-        switch (mCurrentMode) {
-            case NORMAL:
-                button1.setText("跟随");
-                mCurrentMode = MyLocationConfiguration.LocationMode.FOLLOWING;
-                mBaiduMap.setMyLocationConfiguration(new MyLocationConfiguration(
-                        mCurrentMode, true, mCurrentMarker));
-                MapStatus.Builder builder = new MapStatus.Builder();
-                builder.overlook(0);  //俯视程度
-                mBaiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
-                break;
-            case COMPASS:
-                button1.setText("普通");
-                mCurrentMode = MyLocationConfiguration.LocationMode.NORMAL;
-                mBaiduMap.setMyLocationConfiguration(new MyLocationConfiguration(
-                        mCurrentMode, true, mCurrentMarker));
-                MapStatus.Builder builder1 = new MapStatus.Builder();
-                builder1.overlook(0);
-                mBaiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder1.build()));
-                break;
-            case FOLLOWING:
-                button1.setText("罗盘");
-                mCurrentMode = MyLocationConfiguration.LocationMode.COMPASS;
-                mBaiduMap.setMyLocationConfiguration(new MyLocationConfiguration(
-                        mCurrentMode, true, mCurrentMarker));
-                break;
-            default:
+    @OnClick({R.id.button1, R.id.detailAddrLl})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.button1:
+                switch (mCurrentMode) {
+                    case NORMAL:
+                        button1.setText("跟随");
+                        mCurrentMode = MyLocationConfiguration.LocationMode.FOLLOWING;
+                        mBaiduMap.setMyLocationConfiguration(new MyLocationConfiguration(
+                                mCurrentMode, true, mCurrentMarker));
+                        MapStatus.Builder builder = new MapStatus.Builder();
+                        builder.overlook(0);  //俯视程度
+                        mBaiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
+                        break;
+                    case COMPASS:
+                        button1.setText("普通");
+                        mCurrentMode = MyLocationConfiguration.LocationMode.NORMAL;
+                        mBaiduMap.setMyLocationConfiguration(new MyLocationConfiguration(
+                                mCurrentMode, true, mCurrentMarker));
+                        MapStatus.Builder builder1 = new MapStatus.Builder();
+                        builder1.overlook(0);
+                        mBaiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder1.build()));
+                        break;
+                    case FOLLOWING:
+                        button1.setText("罗盘");
+                        mCurrentMode = MyLocationConfiguration.LocationMode.COMPASS;
+                        mBaiduMap.setMyLocationConfiguration(new MyLocationConfiguration(
+                                mCurrentMode, true, mCurrentMarker));
+                        break;
+                    default:
+                        break;
+                }
+            case R.id.detailAddrLl:
+                ToastUtil.showToast("跳到地址模糊查询");
                 break;
         }
     }
@@ -255,7 +283,7 @@ public class BaiduMapActivity extends BaseActivity implements SensorEventListene
             mCurrentLat = location.getLatitude(); //纬度
             mCurrentLon = location.getLongitude(); //经度
             mCurrentAccracy = location.getRadius(); //精度
-            ToastUtil.showToast(mCurrentLat+"");
+            ToastUtil.showToast(mCurrentLat + "");
             LogUtil.e(TAG, "定位信息：精度-" + mCurrentAccracy + "  经度-" + mCurrentLon + "  纬度-" + mCurrentLat);
             locData = new MyLocationData.Builder()
                     .accuracy(mCurrentAccracy)
@@ -297,6 +325,13 @@ public class BaiduMapActivity extends BaseActivity implements SensorEventListene
             for (Poi poi : poiList) {
                 LogUtil.e(TAG, "poi:" + poi.getName());
             }
+
+            //显示详细地址UI
+            if(poiList.size()>0){
+                detailAddrTv.setText(poiList.get(0).getName());
+                streetEt.setText(district + street);
+            }
+
         }
     }
 
