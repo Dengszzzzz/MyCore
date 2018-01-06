@@ -28,10 +28,10 @@ public class RadarView extends View {
     private Paint textPaint;  //文本画笔
 
     /** 可操作数据 **/
-    private int count = 6;  //数据个数,几边形
-    private int ShapeCount = 5;  //多边形数量
-    private String[] titles = {"a","b","c","d","e","f"};
-    private double[] data = {100,60,60,60,90,20}; //各维度分值
+    private int count = 30;  //数据个数,几边形
+    private int ShapeCount = 5;  //多边形数量，实际上是圈数
+    private String[] titles = new String[count];
+    private double[] data = new double[count]; //各维度分值
     private double maxValue = 100;  //数据最大值
     private Context mContext;
     private float radian = (float) (Math.PI*2/count);  //Math.PI=π ，此处计算的是每个角度对应的弧度
@@ -45,6 +45,10 @@ public class RadarView extends View {
     public RadarView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
+        for(int i = 0;i<count;i++){
+            titles[i] = i+"";
+            data[i] = i;
+        }
         initView();
     }
 
@@ -187,6 +191,7 @@ public class RadarView extends View {
         valuePaint.setAlpha(255);  //设置完全不透明
         for(int i=0;i<count;i++){
             double percent = data[i]/maxValue>1 ?1:data[i]/maxValue;  //百分比
+            percent = 1;
             float x = (float) (centerX + radius*Math.cos(radian*i)*percent);
             float y = (float) (centerY + radius*Math.sin(radian*i)*percent);
             if(i==0){

@@ -192,6 +192,7 @@
         <activity android:name=".module.bluetooth.BluetoothDemoActivity" />
         <activity android:name=".module.materialDesign.FlexboxActivity" />
         <activity android:name=".module.map.BaiduMapActivity" />
+        <activity android:name=".module.customView.CountDownActivity" />
 
     </application>
 

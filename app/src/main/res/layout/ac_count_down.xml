@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_deposit_happy">
+
+    <com.dengzh.sample.view.study.DepositHappyView
+        android:id="@+id/depositHappyView"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/publishTimeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="00:30"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/txt_28" />
+
+
+
+</RelativeLayout>

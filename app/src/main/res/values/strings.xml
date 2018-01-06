@@ -22,4 +22,10 @@
     <string name="code_text">请输入生成二维码的文本信息</string>
     <string name="qrcodetext">这里显示扫描结果</string>
 
+    <string name="time_before_minute">分钟前</string>
+    <string name="time_before_hour">小时前</string>
+    <string name="time_before_day">天前</string>
+    <string name="time_before_month">月前</string>
+    <string name="time_year">年</string>
+
 </resources>
