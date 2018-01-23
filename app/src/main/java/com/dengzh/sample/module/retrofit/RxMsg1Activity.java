@@ -3,9 +3,9 @@ package com.dengzh.sample.module.retrofit;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.dengzh.core.rx.RxEvents;
 import com.dengzh.sample.R;
 import com.dengzh.sample.module.base.BaseActivity;
-import com.dengzh.core.rx.RxEvents;
 
 import butterknife.BindView;
 import butterknife.OnClick;

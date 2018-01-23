@@ -8,9 +8,10 @@
     <TextView
         android:id="@+id/itemTv"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:background="@color/grey"
         android:textColor="@color/white"
+        android:padding="10dp"
         android:text="测试"
         android:textSize="@dimen/text_size15"
         android:gravity="center"

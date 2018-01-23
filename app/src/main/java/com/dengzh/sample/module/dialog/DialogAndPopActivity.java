@@ -3,24 +3,14 @@ package com.dengzh.sample.module.dialog;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Gravity;
 import android.view.View;
-import android.webkit.ServiceWorkerClient;
-import android.widget.Button;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.dengzh.core.view.BasePopupWindow;
 import com.dengzh.sample.R;
 import com.dengzh.sample.adapter.ItemAdapter;
+import com.dengzh.sample.adapter.ItemAdapter2;
 import com.dengzh.sample.bean.GoodsSpecBean;
 import com.dengzh.sample.module.base.BaseActivity;
-import com.dengzh.sample.module.customView.BezierActivity;
-import com.dengzh.sample.module.customView.EditTextActivity;
-import com.dengzh.sample.module.customView.LeafLoadingActivity;
-import com.dengzh.sample.module.customView.LevelViewActivity;
-import com.dengzh.sample.module.customView.MeasurePathActivity;
-import com.dengzh.sample.module.customView.PieChartActivity;
-import com.dengzh.sample.module.customView.RadarActivity;
 import com.dengzh.sample.utils.DialogUtils;
 import com.dengzh.sample.utils.ToastUtil;
 import com.dengzh.sample.view.dialog.GoodsSpecSelectDialog;
@@ -32,8 +22,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by dengzh on 2017/11/3.
@@ -45,7 +33,7 @@ public class DialogAndPopActivity extends BaseActivity {
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
-    private ItemAdapter adapter;
+    private ItemAdapter2 adapter;
 
     private ShareDialog shareDialog;
     private GoodsSpecSelectDialog specSelectDialog;
@@ -71,9 +59,9 @@ public class DialogAndPopActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        String[] strs = {"通用提示弹窗","通用确定弹窗","分享弹窗","商品规格弹窗","PopWindow弹窗","MeasurePath学习","晋级图"};
+        String[] strs = {"通用提示弹窗","通用确定弹窗","分享弹窗","商品规格弹窗","PopWindow弹窗"};
         List<String> nameList = Arrays.asList(strs);
-        adapter = new ItemAdapter(nameList);
+        adapter = new ItemAdapter2(nameList);
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override

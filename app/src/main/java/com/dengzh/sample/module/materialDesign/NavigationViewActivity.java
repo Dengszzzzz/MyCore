@@ -2,7 +2,6 @@ package com.dengzh.sample.module.materialDesign;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -15,11 +14,9 @@ import android.widget.TextView;
 
 import com.dengzh.sample.R;
 import com.dengzh.sample.module.base.BaseActivity;
-import com.dengzh.sample.utils.StatusBarUtil;
 import com.dengzh.sample.utils.ToastUtil;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by dengzh on 2017/12/14.

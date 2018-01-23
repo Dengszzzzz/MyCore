@@ -11,7 +11,6 @@ import com.dengzh.sample.view.study.BezierMagicCircleView;
 import com.dengzh.sample.view.study.BezierView;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**

@@ -1,7 +1,6 @@
 package com.dengzh.sample.view.study;
 
 import android.animation.Animator;
-import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -16,10 +15,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.dengzh.core.net.BaseRespEntity;
 import com.dengzh.core.utils.LogUtil;
-
-import retrofit2.http.POST;
 
 /**
  * Created by dengzh on 2017/11/1.

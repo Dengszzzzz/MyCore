@@ -19,7 +19,6 @@ import com.dengzh.sample.utils.ToastUtil;
 import java.util.Set;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**

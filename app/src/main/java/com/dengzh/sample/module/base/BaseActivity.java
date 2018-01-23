@@ -20,8 +20,6 @@ import com.dengzh.core.rx.RxEvents;
 import com.dengzh.core.utils.LogUtil;
 import com.dengzh.sample.R;
 import com.dengzh.sample.utils.TUtil;
-import com.dengzh.sample.utils.ToastUtil;
-import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.trello.rxlifecycle2.components.support.RxFragmentActivity;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.message.PushAgent;
@@ -30,7 +28,6 @@ import butterknife.ButterKnife;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
-import io.reactivex.subjects.PublishSubject;
 
 /**
  * Created by Administrator on 2017/9/7 0007.

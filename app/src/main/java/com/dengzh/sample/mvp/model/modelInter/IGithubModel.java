@@ -1,12 +1,11 @@
 package com.dengzh.sample.mvp.model.modelInter;
 
+import com.dengzh.core.mvp.IBaseModel;
 import com.dengzh.core.net.HttpObserver;
 import com.dengzh.sample.bean.User;
-import com.dengzh.core.mvp.IBaseModel;
 import com.trello.rxlifecycle2.LifecycleTransformer;
 
 import io.reactivex.Observable;
-import io.reactivex.subjects.PublishSubject;
 
 /**
  * Created by dengzh on 2017/9/12 0012.

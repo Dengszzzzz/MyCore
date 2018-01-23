@@ -2,20 +2,19 @@ package com.dengzh.sample.module.base;
 
 import android.app.Application;
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.multidex.MultiDex;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.WindowManager;
 
 import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
 import com.dengzh.core.net.BaseHttpConfig;
+import com.dengzh.core.utils.LogUtil;
 import com.dengzh.sample.R;
 import com.dengzh.sample.net.HttpConfig;
 import com.dengzh.sample.utils.APPUtils;
 import com.dengzh.sample.utils.CrashHandler;
-import com.dengzh.core.utils.LogUtil;
 import com.dengzh.sample.utils.CustomMigrationUtils;
 import com.dengzh.shop.base.ShopModule;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -30,14 +29,9 @@ import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.message.IUmengRegisterCallback;
-import com.umeng.message.MsgConstant;
 import com.umeng.message.PushAgent;
-import com.umeng.message.UmengNotificationClickHandler;
-import com.umeng.message.entity.UMessage;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
-
-import java.util.Map;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -90,6 +84,12 @@ public class App extends Application{
         super.onCreate();
         ctx = this;
         initConfig();
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this) ;
     }
 
     /**

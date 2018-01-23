@@ -7,7 +7,6 @@ import com.dengzh.sample.module.base.BaseActivity;
 import com.dengzh.sample.view.study.RadarView;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by dengzh on 2017/10/31.

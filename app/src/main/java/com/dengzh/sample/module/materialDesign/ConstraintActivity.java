@@ -8,7 +8,6 @@ import android.widget.QuickContactBadge;
 import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.Switch;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.dengzh.sample.R;
@@ -16,7 +15,6 @@ import com.dengzh.sample.module.base.BaseActivity;
 import com.dengzh.sample.utils.ToastUtil;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by dengzh on 2017/12/21.

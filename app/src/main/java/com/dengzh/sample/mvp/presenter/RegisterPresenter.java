@@ -1,7 +1,6 @@
 package com.dengzh.sample.mvp.presenter;
 
 import com.dengzh.core.mvp.BasePresenter;
-import com.dengzh.sample.mvp.model.modelImp.RegisterModel;
 import com.dengzh.sample.mvp.model.modelInter.IRegisterModel;
 import com.dengzh.sample.mvp.view.IRegisterView;
 

@@ -49,9 +49,9 @@ public class DepositHappyView  extends View {
     private int centerX;   //整个View的中心坐标X
     private int centerY;   //整个View的中心坐标Y
     private int mLightCircleRadius;    //灯圆圈半径
-    private int distance = 30;      //灯与圈的距离
+    private int distance = 60;      //灯与圈的距离
     private int mCount = 30;        //灯的总数量
-    private int mLightCount = 5;    //亮灯的数量  随时变化
+    private int mLightCount = 0;    //亮灯的数量  随时变化
     private float radian = (float) (Math.PI*2/mCount);  //Math.PI=π ，此处计算的是每个角度对应的弧度
     private int[] mLightX = new int[mCount];   //亮灯的位置坐标，其实是计录灯圈的的各个点的位置，X轴坐标
     private int[] mLightY = new int[mCount];   //亮灯的位置坐标，其实是计录灯圈的的各个点的位置，Y轴坐标
@@ -100,10 +100,29 @@ public class DepositHappyView  extends View {
         mLightBitmap = BitmapFactory.decodeResource(mResources,R.mipmap.desposit_game_light);
         mLightBitmapRadius = mLightBitmap.getWidth()/2;
 
-       // mCircle = BitmapFactory.decodeResource(mResources,R.mipmap.desposit_game_circle);
+    }
 
-       // mLight =
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);  //取出宽度的确切数值
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);   //取出宽度的测量模式
 
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);  //取出高度的确切数值
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);  //取出高度的测量模式
+
+        //子控件至多达到指定大小的值。包裹内容就是父窗体并不知道子控件到底需要多大尺寸（具体值），
+        // 需要子控件自己测量之后再让父控件给他一个尽可能大的尺寸以便让内容全部显示但不能超过包裹内容的大小
+        if(widthMode == MeasureSpec.AT_MOST){  //至多，Wrap_content
+
+        }else if(widthMode == MeasureSpec.EXACTLY){  //  精确值/match_parent
+
+        }
+
+        //如果对View的宽高进行修改了，不要调用super.onMeasure(widthMeasureSpec,heightMeasureSpec);
+        // 要调用setMeasuredDimension(widthsize,heightsize);。
+        widthSize = mCircleBgBitmapWidth + distance + mLightBitmap.getWidth();
+        heightSize = mCircleBgBitmapHeight + distance + mLightBitmap.getHeight();
+        setMeasuredDimension(widthSize,heightSize);
     }
 
     @Override
@@ -113,8 +132,8 @@ public class DepositHappyView  extends View {
         mTotalHeight = h;
         centerX = w/2;  //中心点X
         centerY = h/2;  //中心点Y
-        mCircleRadius = (int) (Math.min(mTotalWidth,mTotalHeight)/2 * 0.7); //背景圈半径
-        mLightCircleRadius = (int) (Math.min(mTotalWidth,mTotalHeight)/2 * 0.8);  //灯圆圈半径
+        mCircleRadius =  Math.min(mCircleBgBitmapWidth,mCircleBgBitmapHeight)/2; //背景圈半径
+        mLightCircleRadius = Math.min(mTotalWidth,mTotalHeight)/2 - mLightBitmapRadius;  //灯圆圈半径
 
         //计算灯圈的各个点的位置，在画灯的时候使用
         //Math.cos(x) 详解，x指的是弧度而非角度 此处不加 (Math.PI*2/360)*90) 则是从水平方向正右边点开始
@@ -134,18 +153,6 @@ public class DepositHappyView  extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        /*if(isInit){
-            //1.画圈背景
-            canvas.drawBitmap(mCircleBgBitmap,mOuterSrcRect,mOuterDestRect,mBitmapPaint);
-            //2.画圈动画
-            canvas.drawBitmap(mCircleBitmap,mCircleSrcRect,mOuterDestRect,mBitmapPaint);
-            //3.画灯
-            drawUnLight(canvas);
-            isInit = false;
-        }else{
-            //已初始化过了，开启圈圈动画
-            canvas.rotate(rotateDegree);
-        }*/
 
         //1.画圈背景
         canvas.drawBitmap(mCircleBgBitmap,mOuterSrcRect,mOuterDestRect,mBitmapPaint);
@@ -154,19 +161,15 @@ public class DepositHappyView  extends View {
         //3.画圈动画 把坐标系旋转一定角度
         if(anim!=null && anim.isStarted()){
             canvas.rotate(rotateDegree,centerX,centerY);
+            canvas.drawBitmap(mCircleBitmap,mCircleSrcRect,mOuterDestRect,mBitmapPaint);
         }
-        canvas.drawBitmap(mCircleBitmap,mCircleSrcRect,mOuterDestRect,mBitmapPaint);
 
-        /*if(anim!=null && anim.isStarted()){
-            canvas.rotate(rotateDegree);
-        }*/
-       // postInvalidate();
     }
 
 
-    private boolean isInit = true;
     private ValueAnimator anim;
     private float rotateDegree;
+
     /**
      * 画圈 赋予动画效果 效果不好，卡顿
      */
@@ -210,6 +213,19 @@ public class DepositHappyView  extends View {
             }
 
         }
+    }
+
+    /**
+     * 设置亮灯的数量
+     * @param lightCount
+     */
+    public void setLightCount(int lightCount){
+        if(mLightCount == mCount){
+            mLightCount = 0;
+        }else{
+            mLightCount = lightCount;
+        }
+        postInvalidate();
     }
 
 

@@ -1,6 +1,5 @@
 package com.dengzh.sample.module.materialDesign;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,10 +8,14 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.dengzh.sample.R;
 import com.dengzh.sample.adapter.ItemAdapter;
+import com.dengzh.sample.bean.ClazzBean;
 import com.dengzh.sample.module.base.BaseActivity;
-import com.dengzh.sample.module.retrofit.GitHubActivity;
-import com.dengzh.sample.utils.ToastUtil;
+import com.dengzh.sample.module.customView.CustomViewActivity;
+import com.dengzh.sample.module.dialog.DialogAndPopActivity;
+import com.dengzh.sample.module.umeng.UmengActivity;
+import com.dengzh.shop.module.home.HomeActivity;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -32,7 +35,7 @@ public class MaterDesignActivity extends BaseActivity{
     RecyclerView recyclerView;
 
     private ItemAdapter adapter;
-
+    private List<ClazzBean> mList = new ArrayList<>();
 
     @Override
     protected int getLayoutId() {
@@ -48,36 +51,21 @@ public class MaterDesignActivity extends BaseActivity{
 
     @Override
     protected void initData() {
-        String[] strs = {"toolBar","AppBarLayout和CoordinatorLayout","TabLayout","NavigationView","Collapsing","Constraint","FlexboxLayout"};
-        List<String> nameList = Arrays.asList(strs);
-        adapter = new ItemAdapter(nameList);
+        mList.add(new ClazzBean("toolBar",ToolBarTestActivity.class));
+        mList.add(new ClazzBean("AppBarLayout和CoordinatorLayout",AppBarLayoutActivity.class));
+        mList.add(new ClazzBean("TabLayout",TabLayouActivity.class));
+        mList.add(new ClazzBean("NavigationView",NavigationViewActivity.class));
+        mList.add(new ClazzBean("Collapsing",CollapsingToolbarLayoutActivity.class));
+        mList.add(new ClazzBean("Constraint",ConstraintActivity.class));
+        mList.add(new ClazzBean("FlexboxLayout",FlexboxActivity.class));
+        mList.add(new ClazzBean("WebView",WebViewActivity.class));
+
+        adapter = new ItemAdapter(mList);
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                switch (position) {
-                    case 0:
-                        startActivity(ToolBarTestActivity.class);
-                        break;
-                    case 1:
-                        startActivity(AppBarLayoutActivity.class);
-                        break;
-                    case 2:
-                        startActivity(TabLayouActivity.class);
-                        break;
-                    case 3:
-                        startActivity(NavigationViewActivity.class);
-                        break;
-                    case 4:
-                        startActivity(CollapsingToolbarLayoutActivity.class);
-                        break;
-                    case 5:
-                        startActivity(ConstraintActivity.class);
-                        break;
-                    case 6:
-                        startActivity(FlexboxActivity.class);
-                        break;
-                }
+                startActivity(mList.get(position).getClazz());
             }
         });
     }

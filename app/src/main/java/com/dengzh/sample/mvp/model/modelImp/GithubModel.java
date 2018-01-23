@@ -1,15 +1,14 @@
 package com.dengzh.sample.mvp.model.modelImp;
 
 import com.dengzh.core.net.HttpObserver;
+import com.dengzh.core.net.RetrofitManager;
+import com.dengzh.core.utils.RxUtil;
 import com.dengzh.sample.bean.User;
 import com.dengzh.sample.mvp.model.modelInter.IGithubModel;
-import com.dengzh.core.net.RetrofitManager;
 import com.dengzh.sample.net.api.GitHubAPI;
-import com.dengzh.core.utils.RxUtil;
 import com.trello.rxlifecycle2.LifecycleTransformer;
 
 import io.reactivex.Observable;
-import io.reactivex.subjects.PublishSubject;
 
 
 /**

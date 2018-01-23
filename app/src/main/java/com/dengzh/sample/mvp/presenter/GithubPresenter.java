@@ -1,10 +1,8 @@
 package com.dengzh.sample.mvp.presenter;
 
-import com.dengzh.sample.module.retrofit.GitHubActivity;
-import com.dengzh.sample.bean.User;
 import com.dengzh.core.mvp.BasePresenter;
-import com.dengzh.sample.mvp.model.modelImp.GithubModel;
 import com.dengzh.core.net.HttpObserver;
+import com.dengzh.sample.bean.User;
 import com.dengzh.sample.mvp.model.modelInter.IGithubModel;
 import com.dengzh.sample.mvp.view.IGithubView;
 

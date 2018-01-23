@@ -12,7 +12,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 import com.dengzh.sample.R;
 
 import java.util.HashSet;

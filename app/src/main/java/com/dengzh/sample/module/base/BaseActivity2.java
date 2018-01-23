@@ -21,7 +21,6 @@ import com.dengzh.core.rx.RxEvents;
 import com.dengzh.core.utils.LogUtil;
 import com.dengzh.sample.R;
 import com.dengzh.sample.utils.TUtil;
-import com.trello.rxlifecycle2.components.support.RxFragmentActivity;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.message.PushAgent;
 

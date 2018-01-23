@@ -6,8 +6,16 @@
 
     <com.dengzh.sample.view.study.DepositHappyView
         android:id="@+id/depositHappyView"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <!--动画效果-->
+    <ImageView
+        android:id="@+id/circleIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/desposit_game_circle"
         android:layout_centerInParent="true"/>
 
     <TextView

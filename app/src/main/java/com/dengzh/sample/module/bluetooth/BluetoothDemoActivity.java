@@ -8,6 +8,7 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.dengzh.sample.R;
 import com.dengzh.sample.adapter.ItemAdapter;
+import com.dengzh.sample.adapter.ItemAdapter2;
 import com.dengzh.sample.module.base.BaseActivity;
 
 import java.util.Arrays;
@@ -25,7 +26,7 @@ public class BluetoothDemoActivity extends BaseActivity{
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
-    private ItemAdapter adapter;
+    private ItemAdapter2 adapter;
 
     @Override
     protected int getLayoutId() {
@@ -43,7 +44,7 @@ public class BluetoothDemoActivity extends BaseActivity{
     protected void initData() {
         String[] strs = {"蓝牙开发测试","蓝牙服务端","蓝牙客户端"};
         List<String> nameList = Arrays.asList(strs);
-        adapter = new ItemAdapter(nameList);
+        adapter = new ItemAdapter2(nameList);
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override

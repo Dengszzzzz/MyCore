@@ -9,7 +9,6 @@ import com.dengzh.sample.bean.RealmUserBean;
 import com.dengzh.sample.module.base.BaseActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.realm.Realm;
 import io.realm.RealmResults;

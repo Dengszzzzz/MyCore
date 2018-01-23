@@ -82,7 +82,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- 蓝牙 -->
     <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- 蓝牙 -->
 
-    <!--硬件加速  关闭 android:hardwareAccelerated="false" -->
+    <!--硬件加速  关闭 android:hardwareAccelerated="false"  关闭效果极差-->
     <application
         android:name="com.dengzh.sample.module.base.App"
         android:allowBackup="true"
@@ -90,10 +90,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:hardwareAccelerated="false"
+        android:hardwareAccelerated="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.dengzh.sample.MainActivity"
+            android:name="com.dengzh.sample.module.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -174,7 +174,6 @@
         <activity android:name=".module.sqlite.SqliteTestActivity" />
         <activity android:name=".module.sqlite.RelamActivity" />
         <activity android:name=".module.sqlite.GreenDaoActivity" />
-        <activity android:name=".module.customView.LevelViewActivity" />
         <activity android:name=".module.materialDesign.ToolBarTestActivity" />
         <activity android:name=".module.materialDesign.MaterDesignActivity" />
         <activity android:name=".module.materialDesign.AppBarLayoutActivity" />
@@ -193,6 +192,21 @@
         <activity android:name=".module.materialDesign.FlexboxActivity" />
         <activity android:name=".module.map.BaiduMapActivity" />
         <activity android:name=".module.customView.CountDownActivity" />
+        <activity android:name=".module.materialDesign.WebViewActivity" />
+        <activity android:name=".module.gitHubView.GithubViewActivity" />
+        <activity android:name=".module.gitHubView.TanTanActivity" />
+        <activity android:name=".module.gitHubView.RenRenActivity" />
+        <activity android:name=".module.gitHubView.DragPhotoViewActivity"
+            />
+        <activity android:name=".module.gitHubView.DragPhotoActivity"
+            android:theme="@style/translucent"/>
+        <activity android:name=".module.gitHubView.DragPhotoActivity2"
+            android:theme="@style/translucent"/>
+        <activity android:name=".module.gitHubView.MyTransitionActivityA" />
+        <activity android:name=".module.gitHubView.MyTransitionActivityB" />
+        <activity android:name=".module.gitHubView.CreditScoreViewActivity" />
+        <activity android:name=".module.gitHubView.MeiTuanGoodsTypeActivity" />
+
 
     </application>
 

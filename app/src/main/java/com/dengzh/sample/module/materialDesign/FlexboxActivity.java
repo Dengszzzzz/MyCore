@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.dengzh.core.utils.LogUtil;
 import com.dengzh.sample.R;
 import com.dengzh.sample.bean.Book;
 import com.dengzh.sample.module.base.BaseActivity;
@@ -17,7 +16,6 @@ import com.dengzh.sample.view.flexboxlayout.TagFlowLayout;
 import com.google.android.flexbox.FlexboxLayout;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**

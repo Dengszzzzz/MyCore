@@ -5,19 +5,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.dengzh.core.utils.LogUtil;
 import com.dengzh.sample.R;
 import com.dengzh.sample.adapter.ItemAdapter;
+import com.dengzh.sample.adapter.ItemAdapter2;
+import com.dengzh.sample.bean.ClazzBean;
 import com.dengzh.sample.module.base.BaseActivity;
 import com.dengzh.sample.module.customView.CustomViewActivity;
-import com.dengzh.sample.module.dialog.DialogAndPopActivity;
-import com.dengzh.sample.module.retrofit.GitHubActivity;
-import com.dengzh.sample.module.retrofit.RxAndMvpActivity;
-import com.dengzh.sample.module.sqlite.SqliteTestActivity;
-import com.dengzh.sample.utils.PhoneUtils;
 import com.dengzh.sample.utils.ToastUtil;
 import com.dengzh.shop.module.home.HomeActivity;
 import com.umeng.socialize.ShareAction;
@@ -25,12 +20,11 @@ import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by dengzh on 2017/11/2.
@@ -42,7 +36,7 @@ public class UmengActivity extends BaseActivity {
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
-    private ItemAdapter adapter;
+    private ItemAdapter2 adapter;
 
 
     @Override
@@ -65,9 +59,10 @@ public class UmengActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+
         String[] strs = {"友盟奔溃测试","友盟分享","打点数据"};
         List<String> nameList = Arrays.asList(strs);
-        adapter = new ItemAdapter(nameList);
+        adapter = new ItemAdapter2(nameList);
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override

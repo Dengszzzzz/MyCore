@@ -8,15 +8,19 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.dengzh.sample.R;
 import com.dengzh.sample.adapter.ItemAdapter;
+import com.dengzh.sample.bean.ClazzBean;
 import com.dengzh.sample.module.base.BaseActivity;
+import com.dengzh.sample.module.customView.CustomViewActivity;
+import com.dengzh.sample.module.dialog.DialogAndPopActivity;
 import com.dengzh.sample.module.premission.CallActivity;
-import com.tbruyelle.rxpermissions2.RxPermissions;
+import com.dengzh.sample.module.umeng.UmengActivity;
+import com.dengzh.shop.module.home.HomeActivity;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 
 /**
  * Created by dengzh on 2017/11/4.
@@ -28,6 +32,8 @@ public class RxAndMvpActivity extends BaseActivity {
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
     private ItemAdapter adapter;
+    private List<ClazzBean> mList = new ArrayList<>();
+
 
     @Override
     protected int getLayoutId() {
@@ -49,27 +55,17 @@ public class RxAndMvpActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        String[] strs = {"mvp测试","retrofit测试","rxBus测试","rxPermission测试"};
-        List<String> nameList = Arrays.asList(strs);
-        adapter = new ItemAdapter(nameList);
+
+        mList.add(new ClazzBean("mvp测试",RegisterActivity.class));
+        mList.add(new ClazzBean("retrofit测试",GitHubActivity.class));
+        mList.add(new ClazzBean("rxBus测试",RxMsg1Activity.class));
+        mList.add(new ClazzBean("rxPermission测试",CallActivity.class));
+        adapter = new ItemAdapter(mList);
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                switch (position){
-                    case 0:
-                        startActivity(RegisterActivity.class);
-                        break;
-                    case 1:
-                        startActivity(GitHubActivity.class);
-                        break;
-                    case 2:
-                        startActivity(RxMsg1Activity.class);
-                        break;
-                    case 3:
-                        startActivity(CallActivity.class);
-                        break;
-                }
+                startActivity(mList.get(position).getClazz());
             }
         });
     }

@@ -4,13 +4,10 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView;
 
 import com.dengzh.sample.R;
 import com.dengzh.sample.module.base.BaseActivity;
 import com.dengzh.sample.utils.ToastUtil;
-
-import butterknife.BindView;
 
 /**
  * Created by dengzh on 2017/12/11.

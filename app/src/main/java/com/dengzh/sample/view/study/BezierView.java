@@ -14,8 +14,6 @@ import android.view.View;
 
 import com.dengzh.sample.R;
 
-import io.reactivex.internal.queue.MpscLinkedQueue;
-
 /**
  * Created by dengzh on 2017/10/31.
  * 贝塞尔曲线

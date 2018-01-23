@@ -19,7 +19,6 @@ import com.dengzh.sample.R;
 import com.dengzh.sample.module.base.BaseActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by dengzh on 2017/12/12.

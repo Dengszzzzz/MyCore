@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.dengzh.sample.R;
 import com.dengzh.sample.adapter.ItemAdapter;
+import com.dengzh.sample.adapter.ItemAdapter2;
 import com.dengzh.sample.module.base.BaseActivity;
 import com.dengzh.sample.utils.ToastUtil;
 import com.google.zxing.activity.CaptureActivity;
@@ -18,8 +18,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by dengzh on 2017/12/15.
@@ -31,7 +29,7 @@ public class QrCodeActivity extends BaseActivity {
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
-    private ItemAdapter adapter;
+    private ItemAdapter2 adapter;
 
     @Override
     protected int getLayoutId() {
@@ -49,7 +47,7 @@ public class QrCodeActivity extends BaseActivity {
     protected void initData() {
         String[] strs = {"二维码--QrScan","二维码--BGAQRCode-Android"};
         List<String> nameList = Arrays.asList(strs);
-        adapter = new ItemAdapter(nameList);
+        adapter = new ItemAdapter2(nameList);
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override

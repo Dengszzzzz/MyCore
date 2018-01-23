@@ -6,6 +6,7 @@
         <!-- 导航栏底色 -->
         <item name="android:navigationBarColor">@color/colorAccent</item>
         <item name="android:navigationIcon">?attr/homeAsUpIndicator</item>
+        <item name="android:windowContentTransitions">true</item>
     </style>
 
 </resources>

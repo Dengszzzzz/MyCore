@@ -3,7 +3,6 @@ package com.dengzh.sample.module.bluetooth;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothServerSocket;
 import android.bluetooth.BluetoothSocket;
-import android.text.TextUtils;
 
 import java.io.IOException;
 import java.util.UUID;

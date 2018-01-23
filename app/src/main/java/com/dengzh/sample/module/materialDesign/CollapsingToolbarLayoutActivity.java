@@ -12,12 +12,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.dengzh.sample.R;
-import com.dengzh.sample.module.base.BaseActivity;
 import com.dengzh.sample.module.base.BaseActivity2;
 import com.dengzh.sample.utils.StatusBarUtil;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**

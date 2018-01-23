@@ -1,7 +1,7 @@
 package com.dengzh.sample.net.api;
 
-import com.dengzh.sample.bean.User;
 import com.dengzh.core.net.BaseRespEntity;
+import com.dengzh.sample.bean.User;
 
 import io.reactivex.Observable;
 import retrofit2.Call;

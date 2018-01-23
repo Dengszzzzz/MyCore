@@ -2,10 +2,10 @@ package com.dengzh.sample.module.retrofit;
 
 import android.os.Bundle;
 
-import com.dengzh.sample.R;
-import com.dengzh.sample.module.base.BaseActivity;
 import com.dengzh.core.rx.RxBus;
 import com.dengzh.core.rx.RxEvents;
+import com.dengzh.sample.R;
+import com.dengzh.sample.module.base.BaseActivity;
 
 import butterknife.OnClick;
 

@@ -3,20 +3,18 @@ package com.dengzh.sample.module.retrofit;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.dengzh.sample.R;
-import com.dengzh.sample.module.base.BaseActivity;
-import com.dengzh.sample.bean.User;
-import com.dengzh.sample.mvp.model.modelImp.GithubModel;
-import com.dengzh.sample.mvp.presenter.GithubPresenter;
-import com.dengzh.sample.mvp.view.IGithubView;
 import com.dengzh.core.net.BaseRespEntity;
 import com.dengzh.core.net.HttpObserver;
 import com.dengzh.core.net.RetrofitManager;
-import com.dengzh.core.utils.RxUtil;
-import com.dengzh.sample.net.api.GitHubAPI;
 import com.dengzh.core.utils.LogUtil;
-import com.dengzh.sample.utils.ToastUtil;
-import com.trello.rxlifecycle2.LifecycleTransformer;
+import com.dengzh.core.utils.RxUtil;
+import com.dengzh.sample.R;
+import com.dengzh.sample.bean.User;
+import com.dengzh.sample.module.base.BaseActivity;
+import com.dengzh.sample.mvp.model.modelImp.GithubModel;
+import com.dengzh.sample.mvp.presenter.GithubPresenter;
+import com.dengzh.sample.mvp.view.IGithubView;
+import com.dengzh.sample.net.api.GitHubAPI;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
