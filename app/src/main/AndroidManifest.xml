@@ -206,6 +206,10 @@
         <activity android:name=".module.gitHubView.MyTransitionActivityB" />
         <activity android:name=".module.gitHubView.CreditScoreViewActivity" />
         <activity android:name=".module.gitHubView.MeiTuanGoodsTypeActivity" />
+        <activity android:name=".module.video.VideoActivity" />
+        <activity android:name=".module.gitHubView.VideoListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"/>
 
 
     </application>

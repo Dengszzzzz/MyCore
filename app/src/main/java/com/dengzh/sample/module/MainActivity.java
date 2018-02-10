@@ -22,6 +22,7 @@ import com.dengzh.sample.module.retrofit.GitHubActivity;
 import com.dengzh.sample.module.retrofit.RxAndMvpActivity;
 import com.dengzh.sample.module.sqlite.SqliteTestActivity;
 import com.dengzh.sample.module.umeng.UmengActivity;
+import com.dengzh.sample.module.video.VideoActivity;
 import com.dengzh.sample.utils.ToastUtil;
 import com.dengzh.shop.module.home.HomeActivity;
 
@@ -73,6 +74,7 @@ public class MainActivity extends BaseActivity {
         mList.add(new ClazzBean("蓝牙开发测试(未完成)",BluetoothDemoActivity.class));
         mList.add(new ClazzBean("地图(未完成)",BaiduMapActivity.class));
         mList.add(new ClazzBean("Github优秀View",GithubViewActivity.class));
+        mList.add(new ClazzBean("音视频", VideoActivity.class));
 
         adapter = new ItemAdapter(mList);
         recyclerView.setAdapter(adapter);

@@ -33,7 +33,7 @@ import com.dengzh.sample.R;
 public class BasePopupWindow {
     //不设置成abstract 是考虑到工具类可能直接使用  BasePopupWindow pop = new BasePopWindow();
     protected Context mContext;
-    protected PopupWindow popupWindow;
+    protected SupportPopupWindow popupWindow;
     private SparseArray<View> mViews;
     protected View contentView;
     private boolean cancelOnTouchOutside;
@@ -63,7 +63,7 @@ public class BasePopupWindow {
 
     private void initWindow(){
         //1.创建PopupWindow对象，指定宽度和高度
-        popupWindow = new PopupWindow(contentView,width,height);
+        popupWindow = new SupportPopupWindow(contentView,width,height);
         popupWindow.setFocusable(true);  //2.设置可获取焦点
         popupWindow.setOutsideTouchable(cancelOnTouchOutside); //设置可以触摸弹出框以外区域
         ColorDrawable dw = new ColorDrawable(Color.TRANSPARENT);// 实例化一个ColorDrawable颜色为半透明
@@ -82,15 +82,7 @@ public class BasePopupWindow {
      * @param yoff
      */
     public void showAsDropDown(View anchor, int xoff, int yoff) {
-        if (Build.VERSION.SDK_INT < 24) {
-            popupWindow.showAsDropDown(anchor, xoff, yoff);
-        }else{
-            // 获取控件的位置，安卓系统>7.0
-            int[] location = new int[2];
-            anchor.getLocationOnScreen(location);
-            popupWindow.showAtLocation(anchor, Gravity.NO_GRAVITY, 0, location[1] + anchor.getHeight());
-        }
-
+        popupWindow.showAsDropDown(anchor, xoff, yoff);
     }
 
     /**
