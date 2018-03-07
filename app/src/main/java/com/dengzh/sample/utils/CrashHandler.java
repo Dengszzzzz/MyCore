@@ -33,7 +33,7 @@ import java.util.regex.Pattern;
 
 public class CrashHandler implements Thread.UncaughtExceptionHandler {
 
-    public static final String TAG = "TEST";
+    public static final String TAG = "CrashHandler";
     // CrashHandler 实例
     private static CrashHandler INSTANCE = new CrashHandler();
     // 程序的 Context 对象
@@ -43,13 +43,13 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
     // 用来存储设备信息和异常信息
     private Map<String, String> infos = new HashMap<String, String>();
     // 用来显示Toast中的信息
-    private static String error = "程序错误，额，不对，我应该说，服务器正在维护中，请稍后再试";
+    private static String error = "程序错误导致奔溃，请查看日志";
     private static final Map<String, String> regexMap = new HashMap<String, String>();
     // 用于格式化日期,作为日志文件名的一部分
     private DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss",
             Locale.CHINA);
 
-    private String crash_path;
+    private String CRASH_PATH = "/Core/Crash";
 
     /**
      * 保证只有一个 CrashHandler 实例
@@ -76,7 +76,6 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         mDefaultHandler = Thread.getDefaultUncaughtExceptionHandler();
         // 设置该 CrashHandler 为程序的默认处理器
         Thread.setDefaultUncaughtExceptionHandler(this);
-        Log.d("TEST", "Crash:init");
     }
 
     /**
@@ -185,7 +184,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
             if (Environment.getExternalStorageState().equals(
                     Environment.MEDIA_MOUNTED)) {
                 //6.0以上 需要申请权限
-                String path = Environment.getExternalStorageDirectory() + "/Core/Crash";
+                String path = Environment.getExternalStorageDirectory() + CRASH_PATH;
                 File dir = new File(path);
                 if (!dir.exists()) {
                     dir.mkdirs();

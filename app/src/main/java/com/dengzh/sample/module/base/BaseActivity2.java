@@ -12,13 +12,13 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.dengzh.core.base.AppManager;
+import com.dengzh.sample.utils.AppManager;
 import com.dengzh.core.mvp.BasePresenter;
 import com.dengzh.core.mvp.IBaseModel;
 import com.dengzh.core.mvp.IBaseView;
 import com.dengzh.core.rx.RxBus;
 import com.dengzh.core.rx.RxEvents;
-import com.dengzh.core.utils.LogUtil;
+import com.dengzh.core.utils.LogUtils;
 import com.dengzh.sample.R;
 import com.dengzh.sample.utils.TUtil;
 import com.umeng.analytics.MobclickAgent;
@@ -104,9 +104,9 @@ public abstract class BaseActivity2<T extends BasePresenter, M extends IBaseMode
         String contextString = ac.toString();
         String s = contextString.substring(contextString.lastIndexOf(".") + 1, contextString.indexOf("@"));
         if (isRunning) {
-            LogUtil.d("Activity", "app:当前正在加入的界面是:" + s);
+            LogUtils.d("Activity", "app:当前正在加入的界面是:" + s);
         } else {
-            LogUtil.d("Activity", "app:当前销毁的界面是:" + s);
+            LogUtils.d("Activity", "app:当前销毁的界面是:" + s);
         }
     }
 
@@ -153,7 +153,7 @@ public abstract class BaseActivity2<T extends BasePresenter, M extends IBaseMode
         Disposable disposable = RxBus.getIntanceBus().doSubscribe(RxEvents.class, action, new Consumer<Throwable>() {
             @Override
             public void accept(@NonNull Throwable throwable) throws Exception {
-                LogUtil.e("RxBusAccept", throwable.toString());
+                LogUtils.e("RxBusAccept", throwable.toString());
             }
         });
         RxBus.getIntanceBus().addSubscription(this,disposable);

@@ -1,4 +1,4 @@
-package com.dengzh.sample.module.gitHubView;
+package com.dengzh.sample.module.utilsDemo;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +10,14 @@ import com.dengzh.sample.R;
 import com.dengzh.sample.adapter.ItemAdapter;
 import com.dengzh.sample.bean.ClazzBean;
 import com.dengzh.sample.module.base.BaseActivity;
+import com.dengzh.sample.module.customView.BannerActivity;
+import com.dengzh.sample.module.customView.BezierActivity;
+import com.dengzh.sample.module.customView.CountDownActivity;
+import com.dengzh.sample.module.customView.EditTextActivity;
+import com.dengzh.sample.module.customView.LeafLoadingActivity;
+import com.dengzh.sample.module.customView.MeasurePathActivity;
+import com.dengzh.sample.module.customView.PieChartActivity;
+import com.dengzh.sample.module.customView.RadarActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,13 +25,14 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * Created by dengzh on 2018/1/17.
+ * Created by dengzh on 2018/2/25.
  */
 
-public class GithubViewActivity extends BaseActivity {
+public class UtilsActivity extends BaseActivity{
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
+
     private List<ClazzBean> mList = new ArrayList<>();
     private ItemAdapter adapter;
 
@@ -34,7 +43,7 @@ public class GithubViewActivity extends BaseActivity {
 
     @Override
     protected void initUI(Bundle savedInstanceState) {
-        toolbar.setTitle("Github优秀View");
+        toolbar.setTitle("Utils工具Demo");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,13 +57,16 @@ public class GithubViewActivity extends BaseActivity {
     @Override
     protected void initData() {
 
-        mList.add(new ClazzBean("仿探探 炫动滑动 卡片层叠布局,学习RecyclerView的自定义LayoutManager",TanTanActivity.class));
-        mList.add(new ClazzBean("仿人人 炫动滑动 卡片层叠布局",RenRenActivity.class));
-        mList.add(new ClazzBean("高仿微信可拖拽返回PhotoView",DragPhotoViewActivity.class));
-        mList.add(new ClazzBean("自定义转场动画",MyTransitionActivityA.class));
-        mList.add(new ClazzBean("芝麻信用分 雷达图",CreditScoreViewActivity.class));
-        mList.add(new ClazzBean("美团商品分类 viewPager + GridView",MeiTuanGoodsTypeActivity.class));
-        mList.add(new ClazzBean("仿微信 下拉小程序",WXPullToRefreshActivity.class));
+        mList.add(new ClazzBean("软键盘",SoftInputActivity.class));
+        /*mList.add(new ClazzBean("树叶进度条",LeafLoadingActivity.class));
+        mList.add(new ClazzBean("编辑框",EditTextActivity.class));
+        mList.add(new ClazzBean("雷达图",RadarActivity.class));
+        mList.add(new ClazzBean("贝塞尔曲线",BezierActivity.class));
+        mList.add(new ClazzBean("MeasurePath学习",MeasurePathActivity.class));
+        //mList.add(new ClazzBean("晋级图('未完成')",LevelViewActivity.class));
+        mList.add(new ClazzBean("轮播图('未完成')",BannerActivity.class));
+        mList.add(new ClazzBean("倒计时图",CountDownActivity.class));*/
+
         adapter = new ItemAdapter(mList);
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
@@ -64,4 +76,5 @@ public class GithubViewActivity extends BaseActivity {
             }
         });
     }
+
 }

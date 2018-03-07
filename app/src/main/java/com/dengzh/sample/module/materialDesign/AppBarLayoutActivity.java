@@ -14,7 +14,7 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.EditText;
 
-import com.dengzh.core.utils.LogUtil;
+import com.dengzh.core.utils.LogUtils;
 import com.dengzh.sample.R;
 import com.dengzh.sample.module.base.BaseActivity;
 
@@ -110,12 +110,12 @@ public class AppBarLayoutActivity extends BaseActivity {
         userEt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                LogUtil.d(TAG, "beforeTextChanged执行了....s = " + s + "---start = " + start + "---count = " + count + "---after = " + after);
+                LogUtils.d(TAG, "beforeTextChanged执行了....s = " + s + "---start = " + start + "---count = " + count + "---after = " + after);
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                LogUtil.d(TAG, "onTextChanged执行了....s = " + s + "---start = " + start + "---count = " + count + "---before = " + before);
+                LogUtils.d(TAG, "onTextChanged执行了....s = " + s + "---start = " + start + "---count = " + count + "---before = " + before);
                 if (s.length() > 7) {
                     userNameTil.setErrorEnabled(true);//设置是否打开错误提示
                     userNameTil.setError("用户名长度不能超过8个");//设置错误提示的信息
@@ -126,7 +126,7 @@ public class AppBarLayoutActivity extends BaseActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                LogUtil.d(TAG, "afterTextChanged执行了....s = " + s);
+                LogUtils.d(TAG, "afterTextChanged执行了....s = " + s);
             }
         });
 

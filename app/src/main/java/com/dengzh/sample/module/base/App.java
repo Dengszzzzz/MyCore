@@ -10,7 +10,7 @@ import android.view.WindowManager;
 import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
 import com.dengzh.core.net.BaseHttpConfig;
-import com.dengzh.core.utils.LogUtil;
+import com.dengzh.core.utils.LogUtils;
 import com.dengzh.sample.R;
 import com.dengzh.sample.net.HttpConfig;
 import com.dengzh.sample.utils.APPUtils;
@@ -118,13 +118,13 @@ public class App extends Application{
         //环境
         switch (CONFIG_TYPE) {
             case CONFIG_DEVELOP:
-                LogUtil.isDebug = true;
+                LogUtils.isDebug = true;
                 break;
             case CONFIG_TEST:
-                LogUtil.isDebug = true;
+                LogUtils.isDebug = true;
                 break;
             case CONFIG_RELEASE:
-                LogUtil.isDebug = false;
+                LogUtils.isDebug = false;
                 break;
         }
 

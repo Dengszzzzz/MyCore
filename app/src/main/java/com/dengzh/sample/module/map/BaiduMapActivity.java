@@ -32,7 +32,7 @@ import com.baidu.mapapi.search.geocode.GeoCoder;
 import com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener;
 import com.baidu.mapapi.search.geocode.ReverseGeoCodeOption;
 import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
-import com.dengzh.core.utils.LogUtil;
+import com.dengzh.core.utils.LogUtils;
 import com.dengzh.sample.R;
 import com.dengzh.sample.module.base.BaseActivity;
 import com.dengzh.sample.utils.ToastUtil;
@@ -165,7 +165,7 @@ public class BaiduMapActivity extends BaseActivity implements SensorEventListene
              */
             @Override
             public void onMapStatusChangeFinish(MapStatus mapStatus) {
-                LogUtil.e(TAG, "target:" + mapStatus.target + "");
+                LogUtils.e(TAG, "target:" + mapStatus.target + "");
                 //地理编码
                 geoCoder.reverseGeoCode(new ReverseGeoCodeOption().location(mapStatus.target));
                 geoCoder.setOnGetGeoCodeResultListener(new OnGetGeoCoderResultListener() {
@@ -180,19 +180,19 @@ public class BaiduMapActivity extends BaseActivity implements SensorEventListene
                             ToastUtil.showToast("抱歉，未找到结果");
                             return;
                         }
-                        LogUtil.e(TAG, "地理编码开始---------------------------------");
+                        LogUtils.e(TAG, "地理编码开始---------------------------------");
                         String address = reverseGeoCodeResult.getAddress();  //简要地址信息  -- 有用
                         ReverseGeoCodeResult.AddressComponent addressComponent = reverseGeoCodeResult.getAddressDetail();  //层次化地址信息，其实就是简要地址分层 XX省，XX市，XX街道
                         String bussinessCircle = reverseGeoCodeResult.getBusinessCircle();  //位置所属商圈名称 -- 几乎不用
                         String description = reverseGeoCodeResult.getSematicDescription();  //描述信息        -- 有用
-                        LogUtil.e(TAG, "简要地址信息：" + address);
-                        LogUtil.e(TAG, "层次化地址信息：" + addressComponent.district + addressComponent.street);
-                        LogUtil.e(TAG, "位置所属商圈名称：" + bussinessCircle);
-                        LogUtil.e(TAG, "描述信息：" + description);
+                        LogUtils.e(TAG, "简要地址信息：" + address);
+                        LogUtils.e(TAG, "层次化地址信息：" + addressComponent.district + addressComponent.street);
+                        LogUtils.e(TAG, "位置所属商圈名称：" + bussinessCircle);
+                        LogUtils.e(TAG, "描述信息：" + description);
                         for(PoiInfo poiInfo:reverseGeoCodeResult.getPoiList()){
-                            LogUtil.e(TAG,"位置附近的POI信息：" + poiInfo.address + "-" + poiInfo.city + "-" + poiInfo.name);
+                            LogUtils.e(TAG,"位置附近的POI信息：" + poiInfo.address + "-" + poiInfo.city + "-" + poiInfo.name);
                         }
-                        LogUtil.e(TAG, "地理编码结束---------------------------------");
+                        LogUtils.e(TAG, "地理编码结束---------------------------------");
 
                         //显示详细地址UI
                         if(reverseGeoCodeResult.getPoiList().size()>0){
@@ -283,7 +283,7 @@ public class BaiduMapActivity extends BaseActivity implements SensorEventListene
             mCurrentLon = location.getLongitude(); //经度
             mCurrentAccracy = location.getRadius(); //精度
             ToastUtil.showToast(mCurrentLat + "");
-            LogUtil.e(TAG, "定位信息：精度-" + mCurrentAccracy + "  经度-" + mCurrentLon + "  纬度-" + mCurrentLat);
+            LogUtils.e(TAG, "定位信息：精度-" + mCurrentAccracy + "  经度-" + mCurrentLon + "  纬度-" + mCurrentLat);
             locData = new MyLocationData.Builder()
                     .accuracy(mCurrentAccracy)
                     .direction(mCurrentDirection)  // 此处设置开发者获取到的方向信息，顺时针0-360
@@ -310,19 +310,19 @@ public class BaiduMapActivity extends BaseActivity implements SensorEventListene
             String city = location.getCity();    //获取城市
             String district = location.getDistrict();    //获取区县
             String street = location.getStreet();    //获取街道信息
-            LogUtil.e(TAG, "addr:" + addr);
-            LogUtil.e(TAG, "country:" + country);
-            LogUtil.e(TAG, "province:" + province);
-            LogUtil.e(TAG, "city:" + city);
-            LogUtil.e(TAG, "district:" + district);
-            LogUtil.e(TAG, "street:" + street);
+            LogUtils.e(TAG, "addr:" + addr);
+            LogUtils.e(TAG, "country:" + country);
+            LogUtils.e(TAG, "province:" + province);
+            LogUtils.e(TAG, "city:" + city);
+            LogUtils.e(TAG, "district:" + district);
+            LogUtils.e(TAG, "street:" + street);
 
             String locationDescribe = location.getLocationDescribe();    //获取位置描述信息
-            LogUtil.e(TAG, "locationDescribe:" + locationDescribe);
+            LogUtils.e(TAG, "locationDescribe:" + locationDescribe);
 
             List<Poi> poiList = location.getPoiList();
             for (Poi poi : poiList) {
-                LogUtil.e(TAG, "poi:" + poi.getName());
+                LogUtils.e(TAG, "poi:" + poi.getName());
             }
 
             //显示详细地址UI

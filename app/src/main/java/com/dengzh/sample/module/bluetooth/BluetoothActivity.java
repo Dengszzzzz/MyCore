@@ -11,8 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.dengzh.core.utils.LogUtil;
-import com.dengzh.sample.R;
+import com.dengzh.core.utils.LogUtils;
 import com.dengzh.sample.module.base.BaseActivity;
 import com.dengzh.sample.utils.ToastUtil;
 
@@ -108,7 +107,7 @@ public class BluetoothActivity extends BaseActivity {
             for(BluetoothDevice device:pairedDevices){
                 //遍历设备，查看已匹配设备
                 ToastUtil.showToast("已配对设备"+device.getName()+" 地址:"+device.getAddress());
-                LogUtil.e(TAG,"已配对设备"+device.getName()+" 地址:"+device.getAddress());
+                LogUtils.e(TAG,"已配对设备"+device.getName()+" 地址:"+device.getAddress());
             }
         }else{
             ToastUtil.showToast("没有配对设备");
@@ -152,12 +151,12 @@ public class BluetoothActivity extends BaseActivity {
             if(BluetoothDevice.ACTION_FOUND.equals(action)){
                 // Get the BluetoothDevice object from the Intent
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                LogUtil.e(TAG,"发现的设备"+device.getName()+" 地址:"+device.getAddress());
+                LogUtils.e(TAG,"发现的设备"+device.getName()+" 地址:"+device.getAddress());
                 ToastUtil.showToast("发现的设备："+device.getName()+" 地址:"+device.getAddress());
             }else if(BluetoothAdapter.ACTION_SCAN_MODE_CHANGED.equals(action)){
                 //新的扫描模式
                 int scanMode = intent.getIntExtra(BluetoothAdapter.EXTRA_SCAN_MODE,-100);
-                LogUtil.e(TAG, "onReceive: 新的扫描模式"+scanMode);
+                LogUtils.e(TAG, "onReceive: 新的扫描模式"+scanMode);
                 switch (scanMode){
                     case BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE: //设备既能被其他设备检测到，又能被其他设备连接
                         ToastUtil.showToast("SCAN_MODE_CONNECTABLE_DISCOVERABLE");
@@ -171,7 +170,7 @@ public class BluetoothActivity extends BaseActivity {
                 }
                 //老的扫描模式
                 int preScanMode = intent.getIntExtra(BluetoothAdapter.EXTRA_PREVIOUS_SCAN_MODE,-100);
-                LogUtil.e(TAG, "onReceive: 老的扫描模式"+preScanMode);
+                LogUtils.e(TAG, "onReceive: 老的扫描模式"+preScanMode);
             }
         }
     };

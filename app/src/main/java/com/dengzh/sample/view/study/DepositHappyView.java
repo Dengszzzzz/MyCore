@@ -14,7 +14,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
-import com.dengzh.core.utils.LogUtil;
+import com.dengzh.core.utils.LogUtils;
 import com.dengzh.sample.R;
 
 /**
@@ -183,7 +183,7 @@ public class DepositHappyView  extends View {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 rotateDegree = (float) valueAnimator.getAnimatedValue(); //角度
-                LogUtil.e("onDraw","画角度"+rotateDegree);
+                LogUtils.e("onDraw","画角度"+rotateDegree);
                 postInvalidate();
             }
         });

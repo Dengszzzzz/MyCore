@@ -209,7 +209,10 @@
         <activity android:name=".module.video.VideoActivity" />
         <activity android:name=".module.gitHubView.VideoListActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity android:name=".module.utilsDemo.SoftInputActivity" />
+        <activity android:name=".module.utilsDemo.UtilsActivity"/>
+        <activity android:name=".module.gitHubView.WXPullToRefreshActivity" />
 
 
     </application>

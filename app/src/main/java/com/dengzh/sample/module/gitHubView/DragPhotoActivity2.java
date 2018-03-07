@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 
-import com.dengzh.core.utils.LogUtil;
+import com.dengzh.core.utils.LogUtils;
 import com.dengzh.sample.R;
 import com.dengzh.sample.adapter.LocationBean;
 import com.dengzh.sample.utils.glideUtils.GlideUtils;
@@ -73,7 +73,7 @@ public class DragPhotoActivity2 extends AppCompatActivity {
             mPhotoViews[i].setOnExitListener(new DragPhotoView.OnExitListener() {
                 @Override
                 public void onExit(DragPhotoView view, float x, float y, float w, float h) {
-                    LogUtil.e("drag","当前view数据：" + view.getTag());
+                    LogUtils.e("drag","当前view数据：" + view.getTag());
                     performExitAnimation(view, x, y, w, h);  //拖动退出执行
                 }
             });

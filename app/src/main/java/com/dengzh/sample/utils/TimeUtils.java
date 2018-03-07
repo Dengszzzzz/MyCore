@@ -1,15 +1,22 @@
 package com.dengzh.sample.utils;
 
 import android.content.Context;
+import android.text.TextUtils;
 
 import com.dengzh.sample.R;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Created by dengzh on 2018/1/5.
+ * 时间工具类
+ * 1.Date
+ * 2.SimpleDateFormat
+ * 3.Calendar
  */
 
 public class TimeUtils {
@@ -22,6 +29,7 @@ public class TimeUtils {
     public static long MONTH = 30 * DAY;
     public static long YEAR = 12 * MONTH;
 
+    //指定日期格式 yyyyMMddHHmmss
     public static String TIME_FORMAT = "yyyy-MM-dd HH:mm";
     public static String TIME_FORMAT_Day = "yyyy-MM-dd";
     public static String TIME_FORMAT_OTHER = "MM月dd日 HH:mm";
@@ -62,7 +70,6 @@ public class TimeUtils {
     public static String getTimeFormatDay(long time){
         return new SimpleDateFormat(TIME_FORMAT_Day).format(new Date(time));
     }
-
 
     /**
      * 获取时间间隔格式  例：5分钟前 ，5小时前 ，5天前，5月前，2016年
@@ -139,6 +146,62 @@ public class TimeUtils {
             return hour + minute + ":0" + second;
         }
         return hour + minute + ":" + second;
+    }
+
+    /**
+     * 根据指定格式，获取当前时间
+     * @param format
+     * @return
+     */
+    public static String getNowDateFormat(String format){
+        Date currentTime = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat(format);
+        return formatter.format(currentTime);
+    }
+
+    /**
+     * 时间格式转换  如把 yyyy-MM-dd HH:mm 转成  MM月dd日
+     * @param dateStr   时间字符串
+     * @param srcFormat  原格式
+     * @param desFormat  目标格式
+     * @return
+     */
+    public static String getDateFormat(String dateStr,String srcFormat,String desFormat){
+        if (!TextUtils.isEmpty(dateStr)) {
+            final SimpleDateFormat simpleDateFormat = new SimpleDateFormat(desFormat);
+            Date getDate = null;
+            try {
+                getDate = new SimpleDateFormat(srcFormat).parse(dateStr);
+            } catch (ParseException e) {
+                e.printStackTrace();
+                return dateStr;
+            }
+            return simpleDateFormat.format(getDate);
+        }
+        return dateStr;
+    }
+
+    /**
+     * 判断是否润年
+     * 详细设计： 1.被400整除是闰年，否则： 2.不能被4整除则不是闰年 3.能被4整除同时不能被100整除则是闰年
+     * 3.能被4整除同时能被100整除则不是闰年
+     * @param  time
+     * @return
+     */
+    public static boolean isLeapYear( long time) {
+        Date d = new Date(time);
+        GregorianCalendar gc = (GregorianCalendar) Calendar.getInstance();
+        gc.setTime(d);
+        int year = gc.get(Calendar.YEAR);
+        if ((year % 400) == 0)
+            return true;
+        else if ((year % 4) == 0) {
+            if ((year % 100) == 0)
+                return false;
+            else
+                return true;
+        } else
+            return false;
     }
 
 }

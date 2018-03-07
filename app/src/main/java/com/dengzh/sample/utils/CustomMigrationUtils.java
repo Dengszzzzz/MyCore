@@ -7,6 +7,7 @@ import io.realm.RealmSchema;
 
 /**
  * Created by dengzh on 2017/11/4.
+ * Realm 数据库更新工具类
  */
 
 public class CustomMigrationUtils implements RealmMigration {

@@ -19,6 +19,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import com.dengzh.sample.module.MainActivity;
 import com.dengzh.sample.module.base.App;
 
 import java.security.MessageDigest;
@@ -170,30 +171,7 @@ public class APPUtils {
     }
 
 
-    /**
-     * 隐藏键盘
-     *
-     * @param ac
-     */
-    public static void hideInputMethod(Activity ac) {
-        if (ac.getCurrentFocus() != null) {
-            ((InputMethodManager) ac.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(ac.getCurrentFocus().getWindowToken(), 0);
-        }
-    }
 
-
-    /**
-     * 显示键盘
-     */
-    public static void showInputMethod(EditText view) {
-        view.setFocusable(true);
-        view.setFocusableInTouchMode(true);
-        view.requestFocus();
-        view.requestFocusFromTouch();
-        view.setSelection(view.getText().toString().length());
-        InputMethodManager imm = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.showSoftInputFromInputMethod(view.getWindowToken(), 0);
-    }
 
 
     /**
@@ -228,13 +206,7 @@ public class APPUtils {
         mAudioManager.setStreamMute(AudioManager.STREAM_MUSIC, isMute);
     }
 
-    /**
-     * 判断软键盘 弹出
-     */
-    public static void showSoftInput(Context context) {
-        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
-    }
+
 
     /**
      * 比较版本号
@@ -251,9 +223,6 @@ public class APPUtils {
                 e.printStackTrace();
             }
         }
-//        if (version1.equals(version2)) {
-//            return 0;
-//        }
         String[] version1Array = version1.split("//.");  //注意此处为正则匹配，不能用"."；
         String[] version2Array = version2.split("//.");
         int      index         = 0;
@@ -360,22 +329,6 @@ public class APPUtils {
 
 
     /**
-     * 根据时间格式获取时间戳
-     * yyyy-MM-dd HH:mm:ss SSS
-     */
-    public static long getData(String dateFormat, String data) {
-        long d = 0;
-        try {
-            SimpleDateFormat dateTimeFormat = new SimpleDateFormat(dateFormat);
-            Date newData        = dateTimeFormat.parse(data);
-            d = newData.getTime();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return d;
-    }
-
-    /**
      * 根据手机的分辨率从 dp 的单位 转成为 px(像素)
      */
     public static int dipTopx(Context context, float dpValue) {
@@ -383,18 +336,21 @@ public class APPUtils {
         return (int) (dpValue * scale + 0.5f);
     }
 
+
     /**
-     * 5.0以上版本手机动态设置通知栏颜色的方法
-     *
-     * @param activity 需要设置颜色的Activity
-     * @param colorRes 设置的颜色
+     * 举例关闭所有界面，跳转到登陆界面
+     * @param context
      */
-    public static void setStatusBarColor(Activity activity, int colorRes) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            int statusColor = activity.getResources().getColor(colorRes);
-            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            activity.getWindow().setStatusBarColor(statusColor);
-        }
+    public static void finishAllActivity(Activity context){
+        context.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                AppManager.getAppManager().removeAllActivity();
+                Intent intent = new Intent(App.ctx, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                App.ctx.startActivity(intent);
+            }
+        });
     }
 
 }

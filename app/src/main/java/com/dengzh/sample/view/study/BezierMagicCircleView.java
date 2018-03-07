@@ -12,7 +12,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
-import com.dengzh.core.utils.LogUtil;
+import com.dengzh.core.utils.LogUtils;
 
 /**
  * Created by dengzh on 2017/11/1.
@@ -77,14 +77,14 @@ public class BezierMagicCircleView extends View{
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
-        LogUtil.e(TAG,"getWidth--"+ getWidth() +"  getHeight---" + getHeight());
+        LogUtils.e(TAG,"getWidth--"+ getWidth() +"  getHeight---" + getHeight());
 
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        LogUtil.e(TAG,"W--"+ w +"  H---" + h);
+        LogUtils.e(TAG,"W--"+ w +"  H---" + h);
 
         width = w;
         height = h;

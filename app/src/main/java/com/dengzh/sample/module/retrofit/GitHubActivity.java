@@ -6,7 +6,7 @@ import android.widget.TextView;
 import com.dengzh.core.net.BaseRespEntity;
 import com.dengzh.core.net.HttpObserver;
 import com.dengzh.core.net.RetrofitManager;
-import com.dengzh.core.utils.LogUtil;
+import com.dengzh.core.utils.LogUtils;
 import com.dengzh.core.utils.RxUtil;
 import com.dengzh.sample.R;
 import com.dengzh.sample.bean.User;
@@ -82,12 +82,12 @@ public class GitHubActivity extends BaseActivity<GithubPresenter,GithubModel> im
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.body() == null) {
                     try {
-                        LogUtil.e(TAG, response.errorBody().string());
+                        LogUtils.e(TAG, response.errorBody().string());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else {
-                    LogUtil.e(TAG, response.body().toString());
+                    LogUtils.e(TAG, response.body().toString());
                     contentTv.setText(response.body().toString());
                 }
             }
@@ -95,9 +95,9 @@ public class GitHubActivity extends BaseActivity<GithubPresenter,GithubModel> im
             @Override
             public void onFailure(Call<User> call, Throwable t) {
                 if (call.isCanceled()) {
-                    LogUtil.e(TAG, "取消call");
+                    LogUtils.e(TAG, "取消call");
                 } else {
-                    LogUtil.e(TAG, t.toString());
+                    LogUtils.e(TAG, t.toString());
                 }
             }
         });
@@ -140,7 +140,7 @@ public class GitHubActivity extends BaseActivity<GithubPresenter,GithubModel> im
 
                     @Override
                     public void onNext(@NonNull User user) {
-                        LogUtil.e(TAG, user.toString());
+                        LogUtils.e(TAG, user.toString());
                         contentTv.setText(user.toString());
                     }
 
@@ -168,7 +168,7 @@ public class GitHubActivity extends BaseActivity<GithubPresenter,GithubModel> im
                     @Override
                     protected void onSuccees(BaseRespEntity<User> t) throws Exception {
                         User user = t.getData();
-                        LogUtil.e(TAG, user.toString());
+                        LogUtils.e(TAG, user.toString());
                         contentTv.setText(user.toString());
                     }
 
@@ -223,7 +223,7 @@ public class GitHubActivity extends BaseActivity<GithubPresenter,GithubModel> im
     @Override
     public void showContent(String text) {
         contentTv.setText(text);
-        LogUtil.e(TAG, text);
+        LogUtils.e(TAG, text);
     }
 
 }

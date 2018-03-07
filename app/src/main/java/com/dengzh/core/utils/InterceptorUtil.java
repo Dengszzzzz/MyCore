@@ -28,7 +28,7 @@ public class InterceptorUtil {
         return new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
             @Override
             public void log(String message) {
-                LogUtil.e(TAG,"http-log: "+ message);
+                LogUtils.e(TAG,"http-log: "+ message);
             }
         }).setLevel(HttpLoggingInterceptor.Level.BODY); //设置打印数据的级别
     }

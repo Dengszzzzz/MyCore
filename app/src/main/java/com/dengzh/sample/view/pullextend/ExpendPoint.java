@@ -10,6 +10,7 @@ import android.view.View;
 
 /**
  * Created by Renny on 2018/1/2.
+ * 仿微信下拉小程序  小点
  */
 
 public class ExpendPoint extends View {

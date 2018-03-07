@@ -8,7 +8,7 @@ import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.dengzh.core.utils.LogUtil;
+import com.dengzh.core.utils.LogUtils;
 import com.dengzh.sample.R;
 import com.dengzh.sample.module.base.BaseActivity;
 import com.dengzh.sample.utils.TimeUtils;
@@ -82,7 +82,7 @@ public class CountDownActivity extends BaseActivity {
         public void onTick(long millisUntilFinished) {
             //将时间long 转出 分秒格式
             String time = millisUntilFinished / 1000 + "";
-            LogUtil.e(TAG, time);
+            LogUtils.e(TAG, time);
             publishTimeTv.setText(TimeUtils.changeFormSecond((int) (millisUntilFinished / 1000)));
 
             //秒数%60 是算是不是正好整分钟，每个整分钟点亮一颗灯

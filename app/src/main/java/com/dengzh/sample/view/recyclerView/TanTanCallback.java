@@ -2,12 +2,11 @@ package com.dengzh.sample.view.recyclerView;
 
 import android.graphics.Canvas;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.dengzh.core.utils.LogUtil;
+import com.dengzh.core.utils.LogUtils;
 import com.dengzh.sample.R;
 
 import java.util.List;
@@ -77,17 +76,17 @@ public class TanTanCallback extends RenRenCallback{
      * @return
      */
     public boolean isTopViewCenterInHorizontal(View topView) {
-        LogUtil.e("TAG", "getSwipeThreshold() called with: viewHolder.itemView.getX() = [" + topView.getX() + "]");
-        LogUtil.e("TAG", "getSwipeThreshold() called with:  viewHolder.itemView.getWidth() / 2  = [" + topView.getWidth() / 2 + "]");
-        LogUtil.e("TAG", "getSwipeThreshold() called with:  mRv.getX() = [" + mRv.getX() + "]");
-        LogUtil.e("TAG", "getSwipeThreshold() called with:  mRv.getWidth() / 2 = [" + mRv.getWidth() / 2 + "]");
+        LogUtils.e("TAG", "getSwipeThreshold() called with: viewHolder.itemView.getX() = [" + topView.getX() + "]");
+        LogUtils.e("TAG", "getSwipeThreshold() called with:  viewHolder.itemView.getWidth() / 2  = [" + topView.getWidth() / 2 + "]");
+        LogUtils.e("TAG", "getSwipeThreshold() called with:  mRv.getX() = [" + mRv.getX() + "]");
+        LogUtils.e("TAG", "getSwipeThreshold() called with:  mRv.getWidth() / 2 = [" + mRv.getWidth() / 2 + "]");
         return Math.abs(mRv.getWidth() / 2 - topView.getX() - (topView.getWidth() / 2)) < mHorizontalDeviation;
     }
 
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
         super.onSwiped(viewHolder, direction);
-        LogUtil.e("swipecard", "厉害了");
+        LogUtils.e("swipecard", "厉害了");
         //探探只是第一层加了rotate & alpha的操作
         //对rotate进行复位
         viewHolder.itemView.setRotation(0);
@@ -103,7 +102,7 @@ public class TanTanCallback extends RenRenCallback{
     @Override
     public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
-        LogUtil.e("swipecard", "onChildDraw()  viewHolder = [" + viewHolder + "], dX = [" + dX + "], dY = [" + dY + "], actionState = [" + actionState + "], isCurrentlyActive = [" + isCurrentlyActive + "]");
+        LogUtils.e("swipecard", "onChildDraw()  viewHolder = [" + viewHolder + "], dX = [" + dX + "], dY = [" + dY + "], actionState = [" + actionState + "], isCurrentlyActive = [" + isCurrentlyActive + "]");
         //探探的效果
         double swipValue = Math.sqrt(dX * dX + dY * dY);
         double fraction = swipValue / getThreshold();

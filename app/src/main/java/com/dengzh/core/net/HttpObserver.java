@@ -4,7 +4,7 @@ package com.dengzh.core.net;
 import android.accounts.NetworkErrorException;
 import android.content.Context;
 
-import com.dengzh.core.utils.LogUtil;
+import com.dengzh.core.utils.LogUtils;
 
 import java.net.ConnectException;
 import java.net.UnknownHostException;
@@ -64,7 +64,7 @@ public abstract class HttpObserver<T> implements Observer<T> {
      */
     @Override
     public void onError(@NonNull Throwable e) {
-        LogUtil.e(TAG,e.toString());
+        LogUtils.e(TAG,e.toString());
         onRequestEnd();
         try {
             if (e instanceof ConnectException

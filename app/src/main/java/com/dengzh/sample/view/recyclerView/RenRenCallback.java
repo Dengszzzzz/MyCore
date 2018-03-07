@@ -5,7 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 
-import com.dengzh.core.utils.LogUtil;
+import com.dengzh.core.utils.LogUtils;
 
 import java.util.List;
 
@@ -58,7 +58,7 @@ public class RenRenCallback extends ItemTouchHelper.SimpleCallback{
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
         //★实现循环的要点
-        LogUtil.e("TAG2","onSwiped----");
+        LogUtils.e("TAG2","onSwiped----");
         Object remove = mDatas.remove(viewHolder.getLayoutPosition());
         mDatas.add(0, remove);
         //ItemTouchHelper实现的滑动删除，其实只是隐藏了这个滑动的View。并不是真的删除了。 所以要notifyDataSetChanged（）

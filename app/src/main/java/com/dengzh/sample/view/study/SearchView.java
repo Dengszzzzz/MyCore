@@ -15,7 +15,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.dengzh.core.utils.LogUtil;
+import com.dengzh.core.utils.LogUtils;
 
 /**
  * Created by dengzh on 2017/11/1.
@@ -128,7 +128,7 @@ public class SearchView extends View{
 
         path_srarch.lineTo(pos[0],pos[1]); //内圆的结束点与外圆的起点连起来，这条线作为把手
 
-        LogUtil.e(TAG,"pos=" + pos[0] + ":" + pos[1]);  //打印位置信息
+        LogUtils.e(TAG,"pos=" + pos[0] + ":" + pos[1]);  //打印位置信息
     }
 
     /**
@@ -183,7 +183,7 @@ public class SearchView extends View{
                     case SEARCHING:
                         if(!isOver){  //动画未结束
                             mSearchingAnimator.start();
-                            LogUtil.e(TAG,"Update -- RESTART");
+                            LogUtils.e(TAG,"Update -- RESTART");
                             count++;
                             if(count>2){   //count>2进入结束状态
                                 isOver = true;
